@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Formation pour la POEI Développeur web et web mobile" />
     <title>DAWAN - Webmaster Intermédiaire - Introduction </title>
-    <link rel="stylesheet" href="./css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./css/style.css" media="screen" />
     <style>
         .rouge-gras{
             font-weight: bold;
@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header id="top">
         <div>
             <h1>DAWAN - Webmaster Intermédiaire - Introduction</h1>            
         </div>
@@ -33,7 +33,7 @@
     </nav>
     <main>
         <section>
-            <article>
+            <article id="balise-texte">
                 <header>
                     <h2>HTML : Les balises de contenu texte</h2>
                 </header>
@@ -93,7 +93,41 @@ Repellendus dicta facilis corrupti..
                     <a href="./media.html"><button>Lire +</button></a>
                 </footer>
             </article>
+            <article>
+                <header>
+                    <h2>Les problèmes courants en CSS</h2>
+                </header>
+                <p>
+                    Les tailles des éléments sont définis par défaut sur le contenu des éléments, c'est à dir que si je définie une div de 200px de large, avec une marge intérieure de 10px et une bordure de 1px
+                    de large, la place totale de l'élément sur l'écran sera de :
+                    200px + 10px + 10px + 1px + 1px (contenu + marge intérieur gauche + marge intérieur droite +
+                    largeur bordure à gauche + largeur bordure à droite ) => 222px.<br />
+                    c'est la propriété css box-sizing qui est à 'content-box' par défaut.<br />
+                    Pour éviter cela, on appliquera 'border-box' à tous les éléments grace au caractère spécial *
+                    dans la déclaration CSS.
+                </p>
+                <div class="content-box">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit laborum distinctio 
+                </div>
+                <div class="border-box">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit laborum distinctio 
+                </div>
+                <p class="deuxEm">
+                    deux em 
+                    <span class="deuxEm">deux em</span>
+                </p>
+                <p class="deuxRem">
+                    deux rem 
+                    <span class="deuxRem">deux rem</span>
+                </p>
+                <footer>
+                    <a href="./media.html"><button>Lire +</button></a>
+                </footer>
+            </article>
         </section>
+        <aside>
+            <a href="#top"><i class="bi bi-arrow-up-circle-fill"></i></a>
+        </aside>
     </main>
     <footer>
         <div>
@@ -105,6 +139,11 @@ Repellendus dicta facilis corrupti..
                     <li><a href="#" target="_self">lien 04</a></li>
                     <li><a href="#" target="_self">lien 05</a></li>
                     <li><a href="#" target="_self">lien 06</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul>
+                    <li><a href="#balise-texte">Les balises de contenu texte</a></li>
                 </ul>
             </nav>
         </div>

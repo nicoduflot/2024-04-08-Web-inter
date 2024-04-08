@@ -1,0 +1,126 @@
+/* commentaire en CSS */
+/* si vous importer des feuillets css dans un autre feuillet CSS, TOUJOURS EN PREMIER */
+/* import d'autres feuillets CSS */
+@import url('./bootstrap-icons.css');
+
+/*
+Unités de dimension les plus utilisés en web
+
+px          =>  Pixel
+em          =>  cadratin : unité de mesure en print sur les presses. 
+                le cadratin se calcul part rapport à la taille de la police dans l'élément parent
+rem         =>  cadratin racine : se calcul part rapport à la taille de la police dans l'élément racine
+%           =>  Pourcentage, de l'espace disponible autour de l'élément
+vw & vh     =>  vw : viewport width; vh : viewport height
+*/
+
+/*
+
+sélecteur CSS :
+    ATTENTION : en CSS, on impacte tous les éléments correspondants aux sélecteurs écrit
+    
+    sélecteurs simples : balise, identifiant et par classe
+        p                   => tous les éléments p rencontrés dans le document
+                            pas de caractère spécial devant l'élément donc il s'agit d'une balise
+        #special            => l'élément ayant comme attribut id="special"
+                            le caractère # indique qu'on se réfère à l'id
+                            => les id sont uniques dans la page
+        .titreDeChapitre    => les éléments ayant au moins la class="titreDeChapitre" 
+                            le caractère . indique qu'on se réfère à une classe
+                            => ATTENTION : si un élément class="titreDeChapitre toto tata" comme il possède au moins
+                            la classe titreDeChapitre alors il sera trouvé
+    Sélecteur avancés : selon les attributs                                  
+        [data-test]                     => les éléments ayant au moins un attribut nommé data-test
+        [alt]                           => les éléments ayant au moins un attribut alt
+        [data-test="toto"]              => les éléments ayant au moins un attribut nommé data-test="toto"
+        [data-col][data-line]           => les éléments ayant au moins un attribut data-col ET un attribut data-line
+        [data-col="3"][data-line]       => les éléments ayant au moins un attribut data-col="3" ET un attribut data-line
+        [data-col][data-line="2"]       => les éléments ayant au moins un attribut data-col ET un attribut data-line="2"
+        [data-col="3"][data-line="2"]   => les éléments ayant au moins un attribut data-col="3" ET un attribut data-line="2"
+
+    Sélecteur avancés : mélange des sélecteurs simples et ou de sélecteurs avancés
+        h3.titreDeChapitre  => tous les titre h3 ayant la classe titreDeChapitre
+                            si l'élément et la classe sont collés, c'est que l'élément doit avoir au moins cette classe
+        article #special    => un élément avec id="special" enfant direct OU indirect d'un élément article
+                            si l'élément et l'id recherché sont séparés, cela indique une filiation directe ou indirecte
+        main > p            => tous les éléments p enfants directs d'un élément main
+                            le chevron fermant > entre les deux éléments indique une filiation directe.
+        p#special           => un élément p avec id="special"
+        .toto.tata          => un élément ayant au moins les deux classes suivantes toto et tata
+        .toto .tata         => un élément ayant au moins la classe tata enfant direct ou indirect d'un élément ayant au moins la classe toto
+    
+    Pseudo sélecteurs (sélécteur qui permet des "tri" ou des "filtres" sur des sélecteurs )
+        p:nth-of-type(odd)  => tous les paragraphes du document en position impaire
+                            nth-child() le(s) nième(s) enfant(s)
+                            les paramètres : 
+                                odd => impaire - event => paire, Xn => tous les X enfants , Y => le Yème
+                                Xn + Y, si X == 2 et Y == 1 ==> 2n+1
+
+        article:last-child:nth-of-type(4n+3)    => l'article doit être le dernier article et le troisième article d'une ligne de 4
+                                                paramètres :    4n => le nombre d'élément par ligne
+                                                                +3 => le troisième de la ligne
+
+*/
+
+/* :root{} */
+:root{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+}
+
+/* déclaration générales */
+
+*, 
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6{
+    margin: 0;
+}
+
+header, footer{
+    padding: 2rem 0;
+}
+
+/* déclaration des classe */
+
+.content-box{
+    width: 200px;
+    height: 200px;
+    padding: 1rem;
+    border: 2px solid black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-sizing: content-box;
+}
+
+.border-box{
+    width: 200px;
+    height: 200px;
+    padding: 1rem;
+    border: 2px solid black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.deuxEm{
+    font-size: 2em;
+}
+
+.deuxRem{
+    font-size: 2rem;
+}
+
+/* déclaration de structure */
+body{
+    margin: 0;
+}
