@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Formation pour la POEI Développeur web et web mobile" />
+    <title>DAWAN - Webmaster Intermédiaire - Introduction </title>
+    <link rel="stylesheet" href="./css/bootstrap-icons.css" />
+    <style>
+        .rouge-gras{
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+            color:darkred;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>DAWAN - Webmaster Intermédiaire - Introduction</h1>            
+        </div>
+    </header>
+    <nav>
+        <div>
+            <ul>
+                <li><a href="./index.html" target="_self">Accueil</a></li>
+                <li><a href="./media.html" target="_self">Media</a></li>
+                <li><a href="./formulaire.html" target="_self">Contact</a></li>
+                <li><a href="./grille.html" target="_self">Grille CSS</a></li>
+                <li><a href="./animation.html" target="_self">Animations</a></li>
+            </ul>            
+        </div>
+    </nav>
+    <main>
+        <section>
+            <article>
+                <header>
+                    <h2>HTML : Les balises de contenu texte</h2>
+                </header>
+                <p>
+                    <b>Le texte doit 
+                        toujours être 
+                        compris dans des 
+                        balises                    de type paragraphe</b>, comme bloc de citation, le texte préformatté, etc.<br />
+                    La balise <code>&lt;br /&gt;</code> permet le retour chariot au sein d'un paragraphe.
+                </p>
+                <pre>Lorem ipsum dolor sit amet 
+consectetur adipisicing elit. 
+Repellendus dicta facilis corrupti..
+                </pre>
+                <hr />
+                <p>
+                    <strong>La plupart des balise de contenu texte sont en affichage block <code>display:block;</code></strong>, elles prennent tout l'espace disponible, alors que d'autres, telles que <code>&lt;code&gt;</code>, <code>&lt;b&gt;</code>, <code>&lt;strong&gt;</code>, donc en <code>display:inline;</code>, elles "entourent" les texte, elle collent au limite du texte.
+                </p>
+                <p>
+                    Certaines balises utilisent l'espace entre le contenu et la balise :before ou :after comme <code>&lt;q&gt;</code>.<br />
+                    <q>Alea jacta est</q>
+                </p>
+                <p class="bi bi-info-circle-fill">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci corporis voluptates, quaerat dolorum quibusdam omnis ducimus voluptatem quis sequi aliquid. Aspernatur ipsum voluptatibus aliquam et? Amet, quos optio. Officiis, illum.
+                </p>
+                <blockquote>
+                    <q>I'm Batman</q><br /><cite>Bruce Wayne</cite>
+                </blockquote>
+                <code>
+&lt;body&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mon titre<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/h1&gt;<br />
+&lt;/body&gt;
+                </code>
+                <footer>
+                    <a href="./media.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>Des balises le texte</h2>
+                </header>
+                <p>
+                    Autrefois, on utilisait la balise <code>&lt;font&gt;</code> pour changer dans un paragraphe la police de caractère, sa couleur et sa taille. Cette balise est désormais <font color="#be0000" face="verdana" size="3" >dépréciée</font>
+                </p>
+                <p>
+                    Maintenant, à la place on utilisera la balise <code>&lt;span&gt;</code> avec du style css soit en attribut <code>style=""</code> soit via une <span class="rouge-gras">classe</span> CSS décrite dans le fichier CSS.
+                </p>
+                <p>
+                    H<sub>2</sub>SO<sub>4</sub><sup>2-</sup>
+                </p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, delectus at <small>laboriosam</small> impedit similique hic cum <u>laudantium</u> quos facere <s>libero</s> deleniti ipsam ad, distinctio pariatur? <mark>Id reprehenderit ratione laboriosam</mark> beatae!
+                </p>
+                <footer>
+                    <a href="./media.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="#" target="_self">lien 01</a></li>
+                    <li><a href="#" target="_self">lien 02</a></li>
+                    <li><a href="#" target="_self">lien 03</a></li>
+                    <li><a href="#" target="_self">lien 04</a></li>
+                    <li><a href="#" target="_self">lien 05</a></li>
+                    <li><a href="#" target="_self">lien 06</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
