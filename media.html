@@ -6,6 +6,7 @@
     <meta name="description" content="Formation pour la POEI Développeur web et web mobile" />
     <title>DAWAN - Webmaster Intermédiaire - Introduction </title>
     <link rel="stylesheet" href="./css/style.css" media="screen" />
+    <link rel="stylesheet" href="./css/bootstrap-icons.css" media="screen" />
 </head>
 <body>
     <header id="top">
@@ -18,6 +19,7 @@
             <ul>
                 <li><a href="./index.html" target="_self" title="Lien vers l'accueil">Accueil</a></li>
                 <li><a href="./media.html" target="_self" title="lien vers Media">Media</a></li>
+                <li><a href="./exo-cv.html" target="_self" title="lien vers exo cv">Mon CV</a></li>
                 <li><a href="./formulaire.html" target="_self" title="lien vers Contact">Contact</a></li>
                 <li><a href="./grille.html" target="_self" title="lien vers Grille CSS">Grille CSS</a></li>
                 <li><a href="./animation.html" target="_self" title="lien vers Animations">Animations</a></li>
@@ -31,9 +33,11 @@
                     <h2>Media : image balise <code>&lt;img&gt;</code></h2>
                 </header>
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat perspiciatis autem molestiae mollitia, quas illo. Rerum, magni at eligendi ipsa provident consequatur, corrupti fugiat debitis sit magnam ullam, error cum.
-                    <img src="./images/cropped-wallhaven-fallout-4-01-3-1536x922.jpg" alt="Wallpaper inspiré du jeu fallout 4" />
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum voluptates, nemo repellat itaque magnam dolore alias libero vitae magni recusandae assumenda accusantium saepe asperiores voluptas possimus eligendi sit velit aliquam?
+                    <code>img</code> va cherhcer directement l'image appelée, si les attributes de hauteur et de largeur ne sont pas indiqués, l'image s'affiche à sa taille originale. Si on modifie, par exemple, la largeur, la hauteur se recalcul en homothétie (le rapport hauteur - largeur est respecté).
+                </p>
+                <p>
+                    <code>img</code> peut être appelé dans un paragraphe, 
+                    <img src="./images/cropped-wallhaven-fallout-4-01-3-1536x922.jpg" alt="Wallpaper inspiré du jeu fallout 4" /> mais elle déformera l'apparence du texte autour sauf si on lui donne une flottaison en CSS.
                 </p>
                 <figure class="left">
                     <img src="./images/james-white-composite-200w.png" alt="couverture du livre la huitième couleur de Terry Pratchett" />
@@ -42,21 +46,117 @@
                     </figcaption>
                 </figure>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est veritatis odit distinctio fuga minima dolor amet hic voluptatibus odio repellat adipisci laborum quas reprehenderit perspiciatis, voluptatum obcaecati iure. Natus, excepturi!
+                    Si la flottaison est utilisée, il ne faut pas oublier de "nettoyer" l'effet de bord de la flottaison afin que les éléments qui suivent l'image mais qui ne doivent pas appliquer l'effet de flottaison soient correctement placés.
                 </p>
             </article>
             <article>
                 <header>
                     <h2>Media : image balise picture</h2>
                 </header>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla dolores reprehenderit illum pariatur reiciendis, asperiores blanditiis eius, iste quibusdam, sapiente rem vero facere nihil obcaecati fugiat quaerat ut. Sunt!
+                <p class="clear">
+                    <code>picture</code> peut être préférée surtout au niveau de l'adaptatif.
                 </p>
+                <p>
+                    <code>picture</code> utilise un ensemble d'images, de tailles et de poids différents, qu'on va afficher selon des conditions prédéfinie dans la balise <code>source</code> à l'intérieur de <code>picture</code>
+                </p>
+                <picture>
+                    <source srcset="./images/doc-signal-394w.png" media="(min-width: 600px)" />
+                    <img src="./images/doc-signal-200w.png" alt="Portrait du Docteur Emmet Brown, dans le style synthwave, de la série de films Retour vers le futur, dessiné numériquement par l'artiste James White, image téléchargée depuis son site signalnoise" />
+                </picture>
+                <p>
+                    L'attribut <code>srcset</code>  peut aussi êrtre utilisé dans <code>img</code>
+                </p>
+                <img
+                srcset="./images/james-white-composite-200w.png 200w, 
+                ./images/james-white-composite-400w.png 400w, 
+                ./images/james-white-composite-800w.png 800w,
+                ./images/james-white-composite.jpg 1200w"
+
+                sizes="(max-width: 450px) 200px, (max-width: 850px) 400px, (max-width: 1250px) 800px, 1200px"
+
+                src="./images/james-white-composite.jpg" alt="image composite des différentes réalisation de l'artiste James White, connu pour son style synthwave" 
+                />
             </article>
             <article>
                 <header>
-                    <h2></h2>
+                    <h2>Media : L'audio hébergé sur le site</h2>
                 </header>
+                <p>
+                    Il existe la balise <code>audio</code>, cette peut appeler directement le fichier a lire mais peut aussi avoir  une ou plusieurs balises enfant <code>source</code>, qui permet de proposer plusieurs format audio, donc que le navigateur en utilise un qu'il sait lire et jouer.
+                </p>
+                <figure>
+                    <audio id="diablo-town">
+                        <source src="./media/audio/diablo_town.ogg" type="audio/ogg" />
+                        <source src="./media/audio/diablo_town.mp3" type="audio/mp3" />
+                    </audio>
+                    <figcaption>
+                        <button id="playAudio" data-target="diablo-town"><i class="bi bi-play-circle"></i></button>
+                        <button id="pauseAudio" data-target="diablo-town"><i class="bi bi-pause-circle"></i></button>
+                    </figcaption>
+                </figure>
+                <script>
+                    const play = document.getElementById('playAudio');
+                    const pause = document.getElementById('pauseAudio');
+
+                    play.addEventListener('click', function(){
+                        document.getElementById(play.dataset.target).play();
+                    });
+                    
+                    pause.addEventListener('click', function(){
+                        document.getElementById(pause.dataset.target).pause();
+                    });
+                </script>
+            </article>
+            <article>
+                <header>
+                    <h2>Media : la vidéo hébergée sur le site</h2>
+                </header>
+                <p>
+                    On  utilise la balise <code>video</code>, tout comme la balise audio, peut appeler le fichier directement ou proposer plusieurs formats dans des balises <code>source</code>
+                </p>
+                <h3>Une seule source</h3>
+                <video src="./media/video/Fallout-4-Launch-Trailer.mp4" controls preload="auto"></video>
+                <h3>Plusieurs sources</h3>
+                <video controls>
+                    <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.mkv" type="video/mkv" />
+                    <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.webm" type="video/webm" />
+                    <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4" />
+                </video>
+            </article>
+            <article>
+                <header>
+                    <h2>Media : la vidéo hébergée sur un site tier</h2>
+                </header>
+                <!--
+                <iframe width="100%"src="https://www.youtube.com/embed/rrT6v5sOwJg?si=P7YtrPPfdMRJqEV5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                -->
+                <figure class="video video-16-9">
+                    <iframe frameborder="0" type="text/html" src="https://www.youtube.com/embed/rrT6v5sOwJg?si=P7YtrPPfdMRJqEV5" allowfullscreen title="Dailymotion Video Player" >
+                        Votre navigateur ne supporte pas les iframes
+                    </iframe>
+                </figure>
+                <figure class="video video-16-9">
+                    <iframe frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/xxkxw"  allowfullscreen title="Dailymotion Video Player" >
+                        Votre navigateur ne supporte pas les iframes
+                    </iframe>
+                </figure>
+
+                <iframe style="width:100%;aspect-ratio: 16 / 9;" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/xxkxw"  allowfullscreen title="Dailymotion Video Player" >
+                    Votre navigateur ne supporte pas les iframes
+                </iframe>
+                <h3>Les iframes</h3>
+                <ul>
+                    <li><a href="./documents/books.xml" target="documents">Books.xml</a></li>
+                    <li><a href="./documents/CRAM.pdf" target="documents">CRAM.pdf</a></li>
+                    <li><a href="./documents/fichier.txt" target="documents">fichier. txt</a></li>
+                    <li><a href="./documents/PP3.pdf" target="documents">PP3.pdf</a></li>
+                </ul>
+                <div class="video page-21-297">
+                    <iframe src="./documents/CRAM.pdf" name="documents" ></iframe>
+                </div>
+                <div class="video video-16-9">
+                    <iframe src="./frameset-1.html"></iframe>
+                </div>
             </article>
         </section>
         <aside>
