@@ -116,6 +116,10 @@ header, footer{
     padding: 2rem 0;
 }
 
+img{
+    max-width: 100%;
+}
+
 /* déclaration des classe */
 
 .content-box{
