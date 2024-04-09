@@ -73,6 +73,7 @@ sélecteur CSS :
     --site-bg-color: white;
     --site-color: rgb(51, 51, 51);
     --site-link-color: #DE3400;
+    --figure-border: rgba(222, 52, 0, 0.5);
     --site-third-color: rgb(224, 140, 7);
     --site-third-color-75: rgba(224, 140, 7, 0.75);
     --site-third-color-50: rgba(224, 140, 7, 0.5);
@@ -114,10 +115,6 @@ a:hover, a:focus{
 
 header, footer{
     padding: 2rem 0;
-}
-
-img{
-    max-width: 100%;
 }
 
 /* déclaration des classe */
@@ -200,6 +197,24 @@ main article{
     body > footer > div{
         width: 540px;
     }
+
+    figure.left{
+        float: left;
+        margin: 0;
+        margin-right: 0.5rem;
+        text-align: center;
+        border-radius: 0.25rem;
+        border-style: solid;
+        border-width: 1px;
+        border-color: var(--figure-border);
+        padding: 0.5rem;
+    }
+
+    main article{
+        clear: both;
+    }
+
+
 }
 
 @media screen and (min-width: 768px){
@@ -247,3 +262,6 @@ main article{
     }
 }
 
+img{
+    max-width: 100%!important;
+}
