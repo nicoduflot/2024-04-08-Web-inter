@@ -43,7 +43,7 @@ sélecteur CSS :
                             si l'élément et la classe sont collés, c'est que l'élément doit avoir au moins cette classe
         article #special    => un élément avec id="special" enfant direct OU indirect d'un élément article
                             si l'élément et l'id recherché sont séparés, cela indique une filiation directe ou indirecte
-        main > p            => tous les éléments p enfants directs d'un élément main
+        main > article      body > => tous les éléments article enfants directs d'un élément main
                             le chevron fermant > entre les deux éléments indique une filiation directe.
         p#special           => un élément p avec id="special"
         .toto.tata          => un élément ayant au moins les deux classes suivantes toto et tata
@@ -67,6 +67,21 @@ sélecteur CSS :
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.1rem;
     line-height: 1.8rem;
+    /*
+    en CSS il est possible de définir des variables
+    */
+    --site-bg-color: white;
+    --site-color: rgb(51, 51, 51);
+    --site-link-color: #DE3400;
+    --site-third-color: rgb(224, 140, 7);
+    --site-third-color-75: rgba(224, 140, 7, 0.75);
+    --site-third-color-50: rgba(224, 140, 7, 0.5);
+    --site-third-color-25: rgba(224, 140, 7, 0.25);
+    
+    --header-bg: var(--site-color);
+    --header-color: var(--site-bg-color);
+    color: var(--site-color);
+
 }
 
 /* déclaration générales */
@@ -84,6 +99,17 @@ h4,
 h5, 
 h6{
     margin: 0;
+}
+
+a, a:visited{
+    color: var(--site-link-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: var(--site-link-color);
+    color: var(--site-bg-color);
 }
 
 header, footer{
@@ -123,4 +149,30 @@ header, footer{
 /* déclaration de structure */
 body{
     margin: 0;
+}
+
+body > header{
+    background-color: var(--header-bg);
+    color: var(--header-color);
+}
+
+body > nav,
+body > footer{
+    background-color: var(--header-bg);
+}
+
+body > nav ul,
+body > footer ul{
+    margin: 0;
+    list-style-type: none;
+    line-height: 2rem;
+    padding: 0;
+}
+
+body > nav a, body > nav a:visited,
+body > footer a, body > nav a:visited{
+    color: var(--site-bg-color);
+    display: block;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
