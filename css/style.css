@@ -107,7 +107,7 @@ a, a:visited{
     text-decoration: none;
 }
 
-a:hover{
+a:hover, a:focus{
     background-color: var(--site-link-color);
     color: var(--site-bg-color);
 }
@@ -151,6 +151,14 @@ body{
     margin: 0;
 }
 
+body > header > div,
+body > nav > div,
+body > main,
+body > footer > div{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 body > header{
     background-color: var(--header-bg);
     color: var(--header-color);
@@ -176,3 +184,62 @@ body > footer a, body > nav a:visited{
     padding-left: 2rem;
     padding-right: 2rem;
 }
+
+main article{
+    margin: 0.5rem;
+}
+
+@media screen and (min-width: 576px){
+    body > header > div,
+    body > nav > div,
+    body > main,
+    body > footer > div{
+        width: 540px;
+    }
+}
+
+@media screen and (min-width: 768px){
+    body > header > div,
+    body > nav > div,
+    body > main,
+    body > footer > div{
+        width: 720px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    body > header > div,
+    body > nav > div,
+    body > main,
+    body > footer > div{
+        width: 960px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    body > header > div,
+    body > nav > div,
+    body > main,
+    body > footer > div{
+        width: 1140px;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    body > header > div,
+    body > nav > div,
+    body > main,
+    body > footer > div{
+        width: 1320px;
+    }
+}
+
+@media screen and (min-width: 1600px){
+    body > header > div,
+    body > nav > div,
+    body > main,
+    body > footer > div{
+        width: 1560px;
+    }
+}
+
