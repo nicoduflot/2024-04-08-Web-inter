@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'chawp';
+    src: url('./fonts/chawp.eot');
+    src: url('./fonts/chawp.eot') format('embedded-opentype'),
+         url('./fonts/chawp.woff2') format('woff2'),
+         url('./fonts/chawp.woff') format('woff'),
+         url('./fonts/chawp.ttf') format('truetype'),
+         url('./fonts/chawp.svg#chawp') format('svg');
+}
