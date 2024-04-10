@@ -208,6 +208,10 @@ body > footer ul{
     padding: 0;
 }
 
+body > nav ul li:not(body > nav ul li:last-child){
+    border-bottom: 1px solid var(--site-bg-color);
+}
+
 body > nav a, body > nav a:visited,
 body > footer a, body > nav a:visited{
     color: var(--site-bg-color);
@@ -254,6 +258,22 @@ main article{
     body > footer > div{
         width: 720px;
     }
+
+    body > nav ul{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    body > nav ul li:not(body > nav ul li:last-child){
+        border-bottom: unset;
+        border-right: 1px solid var(--site-bg-color);
+    }
+
+    body > nav a, body > nav a:visited,
+    body > footer a, body > nav a:visited{
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+}
 }
 
 @media screen and (min-width: 992px){
