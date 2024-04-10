@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Formation pour la POEI Développeur web et web mobile" />
+    <title>DAWAN - Webmaster Intermédiaire - Introduction </title>
+    <link rel="stylesheet" href="./css/style.css" media="screen" />
+    <link rel="stylesheet" href="./css/bootstrap-icons.css" media="screen" />
+</head>
+<body>
+    <header id="top">
+        <div>
+            <h1>DAWAN - Webmaster Intermédiaire - Introduction</h1>            
+        </div>
+    </header>
+    <nav>
+        <div>
+            <ul>
+                <li><a href="./index.html" target="_self" title="Lien vers l'accueil">Accueil</a></li>
+                <li><a href="./media.html" target="_self" title="lien vers Media">Media</a></li>
+                <li><a href="./exo-cv-form.html" target="_self" title="lien vers exo cv">Mon CV</a></li>
+                <li><a href="./formulaire.html" target="_self" title="lien vers Contact">Contact</a></li>
+                <li><a href="./grille.html" target="_self" title="lien vers Grille CSS">Grille CSS</a></li>
+                <li><a href="./animation.html" target="_self" title="lien vers Animations">Animations</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section>
+            <article>
+                <header>
+                    <h2>Formulaires HTML</h2>
+                </header>
+                <p>
+                    Les formulaires servent a récupérer des informations pour traitement, par exemple,
+                    un serveur php qui pourra les enregistrer en fichier, en bdd, ou les envoyer par mail
+                </p>
+                <p>
+                    Un formulaire se déclare à l'aide de la balise &lt;form&gt;. Il possède des attributs,
+                    dont les plus courants et importants sont : method & action
+                </p>
+                <h3>method</h3>
+                <p>
+                    méthode d'envoi des informations du formulaire, il en existe deux :
+                </p>
+                <ul>
+                    <li>GET : les données sont envoyées associées à des
+                        noms de variables dans l'url de la page de traitement</li>
+                    <li>POST : Les données sont transmises en variables dans
+                        l'entête HTTP.
+                    </li>
+                </ul>
+                <p>
+                    Si la méthode n'est pas indiquée dans le formulaire,
+                    c'est GET qui sera utilisé par défaut
+                </p>
+                <h3>Action</h3>
+                <p>
+                    Indique l'url de la page de traitement des données envoyées par le formulaire.
+                    Si action n'est pas précisé, le formulaire considère que c'est la page où il
+                    se trouve qui sera la page de traitement.
+                </p>
+                <h3>Notre formulaire</h3>
+                <!--
+                    <form></form> équivalent car 
+                        - valeur par défaut de method : get
+                        - valeur par défaut de action : l'url sur lequel on se trouve
+                -->
+                <form method="get" action="./formulaire.html" >
+                    <fieldset>
+                        <legend>Civilité</legend>
+                        <p>
+                            <label for="nom">Nom : </label> 
+                            <input type="text" name="nom" id="nom" autofocus placeholder="Votre nom ici" aria-describedby="info-nom" required />
+                        </p>
+                        <div class="form-info" id="info-nom">
+                            Dans ce champs, inscrivez votre nom, ce champs est obligatoire.
+                        </div>
+                        <p>
+                            <label for="prenom">Prénom : </label> 
+                            <input type="text" name="prenom" id="prenom" placeholder="Votre prénom ici" aria-describedby="info-prenom" />
+                        </p>
+                        <div class="form-info" id="info-prenom">
+                            Dans ce champs, inscrivez votre prénom.
+                        </div>
+                        <p>
+                            <label for="email">Email : </label> 
+                            <input type="email" name="email" id="email" placeholder="Entrez votre email" aria-describedby="info-email" required />
+                        </p>
+                        <div class="form-info" id="info-email">
+                            Dans ce champs, inscrivez votre email, ce champs est obligatoire.
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Votre demande d'échantillon</legend>
+                    </fieldset>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </article>
+        </section>
+        <aside>
+            <a href="#top"><i class="bi bi-arrow-up-circle-fill"></i></a>
+        </aside>
+    </main>
+    <footer>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="#" target="_self">lien 01</a></li>
+                    <li><a href="#" target="_self">lien 02</a></li>
+                    <li><a href="#" target="_self">lien 03</a></li>
+                    <li><a href="#" target="_self">lien 04</a></li>
+                    <li><a href="#" target="_self">lien 05</a></li>
+                    <li><a href="#" target="_self">lien 06</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul>
+                    <li><a href="#balise-texte">Les balises de contenu texte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
