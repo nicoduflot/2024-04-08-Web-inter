@@ -75,27 +75,97 @@
                             <input type="text" name="nom" id="nom" autofocus placeholder="Votre nom ici" aria-describedby="info-nom" required />
                         </p>
                         <div class="form-info" id="info-nom">
-                            Dans ce champs, inscrivez votre nom, ce champs est obligatoire.
+                            Dans ce champ, inscrivez votre nom, ce champs est obligatoire.
                         </div>
                         <p>
                             <label for="prenom">Prénom : </label> 
                             <input type="text" name="prenom" id="prenom" placeholder="Votre prénom ici" aria-describedby="info-prenom" />
                         </p>
                         <div class="form-info" id="info-prenom">
-                            Dans ce champs, inscrivez votre prénom.
+                            Dans ce champ, inscrivez votre prénom.
                         </div>
                         <p>
                             <label for="email">Email : </label> 
                             <input type="email" name="email" id="email" placeholder="Entrez votre email" aria-describedby="info-email" required />
                         </p>
                         <div class="form-info" id="info-email">
-                            Dans ce champs, inscrivez votre email, ce champs est obligatoire.
+                            Dans ce champ, inscrivez votre email, ce champs est obligatoire.
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>Votre demande d'échantillon</legend>
+                        <p>
+                            <Label for="votreBesoin">Déscription de votre besoin</Label>
+                        </p>
+                        <p>
+                            <textarea name="votreBesoin" id="votreBesoin" placeholder="Décrivez votre besoin" aria-describedby="info-besoin" required></textarea>
+                        </p>
+                        <div class="form-info" id="info-besoin">
+                            Dans ce champ, décrivez avec détail votre besoin (typede store, type d'occultation, etc.), ce champs est obligatoire.
+                        </div>
+                        <p>
+                            <label for="materiaux">Type de tissu</label>
+                            <select name="materiaux" id="materiaux" aria-describedby="info-materiaux" required>
+                                <option value="">Choix du tissu</option>
+                                <optgroup label="Toile occultante" aria-label="Toile occultante">
+                                    <option value="M1">Occultant M1</option>
+                                    <option value="M2">Occultant M2</option>
+                                    <option value="M3">Occultant M3</option>
+                                </optgroup>
+                                <optgroup label="Toile anti-feu" aria-label="Toile anti-feu">
+                                    <option value="A1">Anti-feu A1</option>
+                                    <option value="A2">Anti-feu A2</option>
+                                    <option value="A3">Anti-feu A3</option>
+                                </optgroup>
+                            </select>
+                            <div class="form-info" id="info-materiaux">
+                                Dans ce champ, sélectionnez le type de tissu, ce champs est obligatoire.
+                            </div>
+                        </p>
+                        <p>
+                            <label for="couleur">Couleur</label>
+                            <input type="color" name="couleur" id="couleur" aria-describedby="info-couleur" value="#af0000" /> <span id="colorSelected"></span>
+                        </p>
+                        <script language="javascript">
+                            document.getElementById('colorSelected').innerHTML = document.getElementById('couleur').value;
+                            document.getElementById('couleur').addEventListener('change', function(){
+                                document.getElementById('colorSelected').innerHTML = document.getElementById('couleur').value;
+                            });
+                        </script>
+                        <div class="form-info" id="info-couleur">
+                            Dans ce champ, selectionnez la couleur d'échantillon.
+                        </div>
+                        <p>
+                            <label for="luminosite">Luminosité</label>
+                            <input type="range" name="luminosite" id="luminosite" min="0" max="5" step="0.5" aria-describedby="info-luminosite" value="2.5" /> <span id="lumSelected"></span>
+                        </p>
+                        <div class="form-info" id="info-luminosite">
+                            Dans ce champ, indiquez la luminosité, 0 pour très sombre, 5 pour très lumineux.
+                        </div>
+                        <script language="javascript">
+                            document.getElementById('lumSelected').innerHTML = document.getElementById('luminosite').value;
+                            document.getElementById('luminosite').addEventListener('change', function(){
+                                document.getElementById('lumSelected').innerHTML = document.getElementById('luminosite').value;
+                            });
+                        </script>
+                        <p class="radio-check">
+                            <label>Options d'échantillon</label>
+                            <input type="checkbox" name="tissus-01" id="tissus-01" /> <label for="tissus-01">Les autres tissus même couleur</label>
+                            <input type="checkbox" name="tissus-02" id="tissus-02" /> <label for="tissus-01">Les autres tissus même matière</label>
+                            <input type="checkbox" name="tissus-03" id="tissus-02" /> <label for="tissus-01">Les autres tissus même matière, même couleur</label>
+                        </p>
+                        <p class="radio-check">
+                            <label>La demande est pour</label>
+                            <input type="radio" name="personne" id="personne" value="part" checked /> <label>Personne physique (Particulier)</label>
+                            <input type="radio" name="personne" id="personne" value="priv" /> <label>Personne morale (Entreprise privée)</label>
+                            <input type="radio" name="personne" id="personne" value="adm" /> <label>Personne morale (Entreprise état)</label>
+                        </p>
                     </fieldset>
-                    <button type="submit">Envoyer</button>
+                    <input type="hidden" name="cache" id="cache" value="cette information n'est pas affichée à l'écran mais reste visible dans le html de la page" />
+                    <p>
+                        <button type="submit">Envoyer</button>
+                        <button type="reset">Effacer les données du formulaire</button>
+                    </p>
                 </form>
             </article>
         </section>
