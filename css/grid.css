@@ -29,11 +29,28 @@ body > main{
     #cell-02{
         grid-row: span 2;
     }
+
+    #cell-05{
+        grid-row: span 2;
+        grid-column: span 2;
+    }
 }
 
 @media screen and (min-width: 768px) {
     .grid{
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #cell-01{
+        grid-column: span 3;
+    }
+
+    #cell-02{
+        grid-row: span 1;
+    }
+
+    #cell-09, #cell-11{
+        grid-column: span 2;
     }
 }
 
@@ -41,16 +58,36 @@ body > main{
     .grid{
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+
+    #cell-03{
+        grid-column: span 2;
+    }
+
+    #cell-05, #cell-11{
+        grid-column: span 1;
+    }
 }
 
 @media screen and (min-width: 1200px) {
     .grid{
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
+
+    #cell-02, #cell-07, #cell-05{
+        grid-column: span 2;
+    }
 }
 
 @media screen and (min-width: 1400px) {
     .grid{
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    #cell-01, #cell-10, #cell-11{
+        grid-column: span 2;
+    }
+
+    #cell-06{
+        grid-column: span 3;
     }
 }
