@@ -63,6 +63,56 @@
     </nav>
     <main class="container">
         <section class="row">
+            <article>
+                <h2>Les derniers articles</h2>
+                <div id="carouselExampleCaptions" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <figure class="carousel-item active">
+                            <img src="./images/cropped-wallhaven-fallout-4-01-3-1536x922.jpg" class="d-block w-100"
+                                alt="...">
+                            <figcaption class="carousel-caption d-none d-md-block">
+                                <h3 class="h5">First slide label</h3>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="carousel-item">
+                            <img src="./images/james-white-composite.jpg" class="d-block w-100" alt="...">
+                            <figcaption class="carousel-caption d-none d-md-block">
+                                <h3 class="h5">Second slide label</h3>
+                                <p>Some representative placeholder content for the second slide.</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="carousel-item">
+                            <img src="./images/synthwave-vibe-james-white-signalnoise-w1000.png" class="d-block w-100"
+                                alt="...">
+                            <figcaption class="carousel-caption d-none d-md-block">
+                                <h3 class="h5">Third slide label</h3>
+                                <p>Some representative placeholder content for the third slide.</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </article>
+        </section>
+        <section class="row">
             <article class="col-md-6 col-xl-4">
                 <header>
                     <h2>Media : image balise <code>&lt;img&gt;</code></h2>
@@ -150,6 +200,19 @@
                         document.getElementById(pause.dataset.target).pause();
                     });
                 </script>
+                <h3>Les iframes</h3>
+                <ul>
+                    <li><a href="./documents/books.xml" target="documents">Books.xml</a></li>
+                    <li><a href="./documents/CRAM.pdf" target="documents">CRAM.pdf</a></li>
+                    <li><a href="./documents/fichier.txt" target="documents">fichier. txt</a></li>
+                    <li><a href="./documents/PP3.pdf" target="documents">PP3.pdf</a></li>
+                </ul>
+                <div>
+                    <iframe src="./documents/CRAM.pdf" name="documents"></iframe>
+                </div>
+                <div>
+                    <iframe src="./frameset-1.html"></iframe>
+                </div>
             </article>
             <article class="col-md-6 col-xl-4">
                 <header>
@@ -160,7 +223,8 @@
                     directement ou proposer plusieurs formats dans des balises <code>source</code>
                 </p>
                 <h3>Une seule source</h3>
-                <video class="img-fluid" src="./media/video/Fallout-4-Launch-Trailer.mp4" controls preload="auto"></video>
+                <video class="img-fluid" src="./media/video/Fallout-4-Launch-Trailer.mp4" controls
+                    preload="auto"></video>
                 <h3>Plusieurs sources</h3>
                 <video class="img-fluid" controls>
                     <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.mkv" type="video/mkv" />
@@ -193,21 +257,142 @@
                     Votre navigateur ne supporte pas les iframes
                 </iframe>
                 -->
-                <h3>Les iframes</h3>
-                <ul>
-                    <li><a href="./documents/books.xml" target="documents">Books.xml</a></li>
-                    <li><a href="./documents/CRAM.pdf" target="documents">CRAM.pdf</a></li>
-                    <li><a href="./documents/fichier.txt" target="documents">fichier. txt</a></li>
-                    <li><a href="./documents/PP3.pdf" target="documents">PP3.pdf</a></li>
-                </ul>
-                <div>
-                    <iframe src="./documents/CRAM.pdf" name="documents"></iframe>
+            </article>
+        </section>
+        <section class="row">
+            <article class="col-md-6">
+                <h2>Les tableaux HTML (+ bootstrap)</h2>
+                <table class="table table-dark">
+                    <caption class="caption-top">Meilleurs albums du monde</caption>
+                    <thead>
+                        <tr>
+                            <th>Année</th>
+                            <th>Groupe</th>
+                            <th>Album</th>
+                            <th>Style</th>
+                            <th>Cover</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1993</td>
+                            <td>Angra</td>
+                            <td>Angels</td>
+                            <td>Power Metal</td>
+                            <td><img class="img-thumbnail" src="./images/albums/Angra_angels_cry.jpg" /></td>
+                        </tr>
+                        <tr>
+                            <td>1991</td>
+                            <td>Nirvana</td>
+                            <td>Nevermind</td>
+                            <td>Grunge</td>
+                            <td><img class="img-thumbnail" src="./images/albums/nirvana-nevermind-cover.jpg" /></td>
+                        </tr>
+                        <tr>
+                            <td>2022</td>
+                            <td>Florence and the machine</td>
+                            <td>Dance Fever</td>
+                            <td>Indie Rock</td>
+                            <td><img class="img-thumbnail"
+                                    src="./images/albums/florence-and-the-machine-dance-fever.jpg" /></td>
+                        </tr>
+                        <tr>
+                            <td>2021</td>
+                            <td>Alice Phoebe Lou</td>
+                            <td>Glow</td>
+                            <td>Folk</td>
+                            <td><img class="img-thumbnail" src="./images/albums/alice-phoebe-lou-glow-cover.jpg" /></td>
+                        </tr>
+                        <tr>
+                            <td>1995</td>
+                            <td>Radiohead</td>
+                            <td>The Bends</td>
+                            <td>Brit Rock</td>
+                            <td><img class="img-thumbnail" src="./images/albums/radiohead-the-bends-cover.jpg" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article class="col-md-3">
+                <div class="card">
+                    <img src="./images/albums/Angra_angels_cry.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Card title</h2>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Go
+                            somewhere</a>
+                    </div>
                 </div>
-                <div>
-                    <iframe src="./frameset-1.html"></iframe>
+            </article>
+            <article class="col-md-3">
+                <div class="card">
+                    <img src="./images/albums/nirvana-nevermind-cover.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Card title</h2>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary stretched-link" role="button">Go somewhere</a>
+                    </div>
                 </div>
             </article>
         </section>
+        <section class="row">
+            <article>
+                <ul class="nav nav-tabs" id="custom-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" data-target="newsletter">Newsletter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-target="video">Vidéo du moment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-target="thoughs">Dernières pensées</a>
+                    </li>
+                </ul>
+                <div class="nav-active my-2" data-content="newsletter">
+                    <form>
+                        <div class="row justify-content-center">
+                            <div class="col-6">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">@</span>
+                                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-outline-success" type="submit">Enregistrer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div data-content="video">
+
+                </div>
+                <div data-content="thoughs">
+                    
+                </div>
+            </article>
+        </section>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <aside>
             <a href="#top"><i class="bi bi-arrow-up-circle-fill"></i></a>
         </aside>
