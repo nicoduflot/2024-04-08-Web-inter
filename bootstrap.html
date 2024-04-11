@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,46 +8,220 @@
     <title>DAWAN - Webmaster Intermédiaire - Introduction </title>
     <link rel="stylesheet" href="./css/bootstrap.css" media="screen" />
     <link rel="stylesheet" href="./css/bootstrap-icons.css" media="screen" />
+    <script src="./js/bootstrap.bundle.js"></script>
 </head>
+
 <body>
-    <header id="top">
-        <div>
-            <h1>DAWAN - Webmaster Intermédiaire - Introduction</h1>            
+    <header id="top" class="navbar bg-dark text-white" data-bs-theme="dark">
+        <div class="container">
+            <h1>DAWAN - Webmaster Intermédiaire - Introduction</h1>
         </div>
     </header>
-    <nav>
-        <div>
-            <ul>
-                <li><a href="./index.html" target="_self" title="Lien vers l'accueil">Accueil</a></li>
-                <li><a href="./media.html" target="_self" title="lien vers Media">Media</a></li>
-                <li><a href="./exo-cv-form.html" target="_self" title="lien vers exo cv">Mon CV</a></li>
-                <li><a href="./formulaire.html" target="_self" title="lien vers Contact">Contact</a></li>
-                <li><a href="./grille.html" target="_self" title="lien vers Grille CSS">Grille CSS</a></li>
-                <li><a href="./bootstrap.html" target="_self" title="lien vers Bootstrap">Bootstrap</a></li>
-                <li><a href="./animation.html" target="_self" title="lien vers Animations">Animations</a></li>
-            </ul>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand me-0 ms-2" href="#">Accueil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="./media.html" target="_self"
+                            title="lien vers Media">Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./exo-cv-form.html" target="_self"
+                            title="lien vers exo cv">Mon CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./formulaire.html" target="_self"
+                            title="lien vers Contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./grille.html" target="_self"
+                            title="lien vers Grille CSS">Grille CSS</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./bootstrap.html" target="_self"
+                            title="lien vers Bootstrap">Bootstrap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./animation.html" target="_self"
+                            title="lien vers Animations">Animations</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
         </div>
     </nav>
-    <main>
-        <section>
-            <article>
-                
+    <main class="container">
+        <section class="row">
+            <article class="col-md-6 col-xl-4">
+                <header>
+                    <h2>Media : image balise <code>&lt;img&gt;</code></h2>
+                </header>
+                <p>
+                    <code>img</code> va cherhcer directement l'image appelée, si les attributes de hauteur et de largeur
+                    ne sont pas indiqués, l'image s'affiche à sa taille originale. Si on modifie, par exemple, la
+                    largeur, la hauteur se recalcul en homothétie (le rapport hauteur - largeur est respecté).
+                </p>
+                <p>
+                    <code>img</code> peut être appelé dans un paragraphe,
+                    <img class="img-fluid" src="./images/cropped-wallhaven-fallout-4-01-3-1536x922.jpg"
+                        alt="Wallpaper inspiré du jeu fallout 4" /> mais elle déformera l'apparence du texte autour sauf
+                    si on lui donne une flottaison en CSS.
+                </p>
+                <figure class="left">
+                    <img src="./images/james-white-composite-200w.png"
+                        alt="couverture du livre la huitième couleur de Terry Pratchett" />
+                    <figcaption>
+                        couverture du livre la huitième couleur de Terry Pratchett
+                    </figcaption>
+                </figure>
+                <p>
+                    Si la flottaison est utilisée, il ne faut pas oublier de "nettoyer" l'effet de bord de la flottaison
+                    afin que les éléments qui suivent l'image mais qui ne doivent pas appliquer l'effet de flottaison
+                    soient correctement placés.
+                </p>
+            </article>
+            <article class="col-md-6 col-xl-4">
+                <header>
+                    <h2>Media : image balise picture</h2>
+                </header>
+                <p>
+                    <code>picture</code> peut être préférée surtout au niveau de l'adaptatif.
+                </p>
+                <p>
+                    <code>picture</code> utilise un ensemble d'images, de tailles et de poids différents, qu'on va
+                    afficher selon des conditions prédéfinie dans la balise <code>source</code> à l'intérieur de
+                    <code>picture</code>
+                </p>
+                <picture>
+                    <source srcset="./images/doc-signal-394w.png" media="(min-width: 600px)" />
+                    <img class="img-fluid" src="./images/doc-signal-200w.png"
+                        alt="Portrait du Docteur Emmet Brown, dans le style synthwave, de la série de films Retour vers le futur, dessiné numériquement par l'artiste James White, image téléchargée depuis son site signalnoise" />
+                </picture>
+                <p>
+                    L'attribut <code>srcset</code> peut aussi êrtre utilisé dans <code>img</code>
+                </p>
+                <img class="img-fluid" srcset="./images/james-white-composite-200w.png 200w, 
+                ./images/james-white-composite-400w.png 400w, 
+                ./images/james-white-composite-800w.png 800w,
+                ./images/james-white-composite.jpg 1200w"
+                    sizes="(max-width: 450px) 200px, (max-width: 900px) 400px, (max-width: 1250px) 800px, 1200px"
+                    src="./images/james-white-composite.jpg"
+                    alt="image composite des différentes réalisation de l'artiste James White, connu pour son style synthwave" />
+            </article>
+            <article class="col-md-6 col-xl-4">
+                <header>
+                    <h2>Media : L'audio hébergé sur le site</h2>
+                </header>
+                <p>
+                    Il existe la balise <code>audio</code>, cette peut appeler directement le fichier a lire mais peut
+                    aussi avoir une ou plusieurs balises enfant <code>source</code>, qui permet de proposer plusieurs
+                    format audio, donc que le navigateur en utilise un qu'il sait lire et jouer.
+                </p>
+                <figure>
+                    <audio id="diablo-town">
+                        <source src="./media/audio/diablo_town.ogg" type="audio/ogg" />
+                        <source src="./media/audio/diablo_town.mp3" type="audio/mp3" />
+                    </audio>
+                    <figcaption>
+                        <button id="playAudio" data-target="diablo-town"><i class="bi bi-play-circle"></i></button>
+                        <button id="pauseAudio" data-target="diablo-town"><i class="bi bi-pause-circle"></i></button>
+                    </figcaption>
+                </figure>
+                <script>
+                    const play = document.getElementById('playAudio');
+                    const pause = document.getElementById('pauseAudio');
+
+                    play.addEventListener('click', function () {
+                        document.getElementById(play.dataset.target).play();
+                    });
+
+                    pause.addEventListener('click', function () {
+                        document.getElementById(pause.dataset.target).pause();
+                    });
+                </script>
+            </article>
+            <article class="col-md-6 col-xl-4">
+                <header>
+                    <h2>Media : la vidéo hébergée sur le site</h2>
+                </header>
+                <p>
+                    On utilise la balise <code>video</code>, tout comme la balise audio, peut appeler le fichier
+                    directement ou proposer plusieurs formats dans des balises <code>source</code>
+                </p>
+                <h3>Une seule source</h3>
+                <video class="img-fluid" src="./media/video/Fallout-4-Launch-Trailer.mp4" controls preload="auto"></video>
+                <h3>Plusieurs sources</h3>
+                <video class="img-fluid" controls>
+                    <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.mkv" type="video/mkv" />
+                    <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.webm" type="video/webm" />
+                    <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4" />
+                </video>
+            </article>
+            <article class="col-xl-8">
+                <header>
+                    <h2>Media : la vidéo hébergée sur un site tier</h2>
+                </header>
+                <!--
+                <iframe width="100%"src="https://www.youtube.com/embed/rrT6v5sOwJg?si=P7YtrPPfdMRJqEV5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                -->
+                <figure class="ratio ratio-16x9">
+                    <iframe frameborder="0" type="text/html"
+                        src="https://www.youtube.com/embed/rrT6v5sOwJg?si=P7YtrPPfdMRJqEV5" allowfullscreen
+                        title="Dailymotion Video Player">
+                        Votre navigateur ne supporte pas les iframes
+                    </iframe>
+                </figure>
+                <figure class="ratio ratio-16x9">
+                    <iframe frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/xxkxw"
+                        allowfullscreen title="Dailymotion Video Player">
+                        Votre navigateur ne supporte pas les iframes
+                    </iframe>
+                </figure>
+                <!-- 
+                <iframe style="width:100%;aspect-ratio: 16 / 9;" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/xxkxw"  allowfullscreen title="Dailymotion Video Player" >
+                    Votre navigateur ne supporte pas les iframes
+                </iframe>
+                -->
+                <h3>Les iframes</h3>
+                <ul>
+                    <li><a href="./documents/books.xml" target="documents">Books.xml</a></li>
+                    <li><a href="./documents/CRAM.pdf" target="documents">CRAM.pdf</a></li>
+                    <li><a href="./documents/fichier.txt" target="documents">fichier. txt</a></li>
+                    <li><a href="./documents/PP3.pdf" target="documents">PP3.pdf</a></li>
+                </ul>
+                <div>
+                    <iframe src="./documents/CRAM.pdf" name="documents"></iframe>
+                </div>
+                <div>
+                    <iframe src="./frameset-1.html"></iframe>
+                </div>
             </article>
         </section>
         <aside>
             <a href="#top"><i class="bi bi-arrow-up-circle-fill"></i></a>
         </aside>
     </main>
-    <footer>
-        <div>
-            <nav>
-                <ul>
-                    <li><a href="#" target="_self">lien 01</a></li>
-                    <li><a href="#" target="_self">lien 02</a></li>
-                    <li><a href="#" target="_self">lien 03</a></li>
-                    <li><a href="#" target="_self">lien 04</a></li>
-                    <li><a href="#" target="_self">lien 05</a></li>
-                    <li><a href="#" target="_self">lien 06</a></li>
+    <footer class="navbar bg-dark text-white" data-bs-theme="dark">
+        <div class="container">
+            <nav class="navbar-nav">
+                <ul style="list-style-type: none;padding: 0;margin-bottom: 0;">
+                    <li class="nav-item"><a class="nav-link py-1" href="#" target="_self">lien 01</a></li>
+                    <li class="nav-item"><a class="nav-link py-1" href="#" target="_self">lien 02</a></li>
+                    <li class="nav-item"><a class="nav-link py-1" href="#" target="_self">lien 03</a></li>
+                    <li class="nav-item"><a class="nav-link py-1" href="#" target="_self">lien 04</a></li>
+                    <li class="nav-item"><a class="nav-link py-1" href="#" target="_self">lien 05</a></li>
+                    <li class="nav-item"><a class="nav-link py-1" href="#" target="_self">lien 06</a></li>
                 </ul>
             </nav>
             <nav>
@@ -57,4 +232,5 @@
         </div>
     </footer>
 </body>
+
 </html>
