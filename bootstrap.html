@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/bootstrap.css" media="screen" />
     <link rel="stylesheet" href="./css/bootstrap-icons.css" media="screen" />
     <script src="./js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="./css/bs-custom.css" media="screen" />
 </head>
 
 <body>
@@ -184,8 +185,8 @@
                         <source src="./media/audio/diablo_town.mp3" type="audio/mp3" />
                     </audio>
                     <figcaption>
-                        <button id="playAudio" data-target="diablo-town"><i class="bi bi-play-circle"></i></button>
-                        <button id="pauseAudio" data-target="diablo-town"><i class="bi bi-pause-circle"></i></button>
+                        <button class="btn btn-outline-primary px-4 py-0" id="playAudio" data-target="diablo-town"><i class="bi bi-play-circle x2"></i></button>
+                        <button class="btn btn-outline-primary px-4 py-0" id="pauseAudio" data-target="diablo-town"><i class="bi bi-pause-circle x2"></i></button>
                     </figcaption>
                 </figure>
                 <script>
@@ -207,10 +208,10 @@
                     <li><a href="./documents/fichier.txt" target="documents">fichier. txt</a></li>
                     <li><a href="./documents/PP3.pdf" target="documents">PP3.pdf</a></li>
                 </ul>
-                <div>
+                <div class="ratio ratio-4x3">
                     <iframe src="./documents/CRAM.pdf" name="documents"></iframe>
                 </div>
-                <div>
+                <div class="ratio ratio-4x3">
                     <iframe src="./frameset-1.html"></iframe>
                 </div>
             </article>
@@ -262,56 +263,60 @@
         <section class="row">
             <article class="col-md-6">
                 <h2>Les tableaux HTML (+ bootstrap)</h2>
-                <table class="table table-dark">
-                    <caption class="caption-top">Meilleurs albums du monde</caption>
-                    <thead>
-                        <tr>
-                            <th>Année</th>
-                            <th>Groupe</th>
-                            <th>Album</th>
-                            <th>Style</th>
-                            <th>Cover</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1993</td>
-                            <td>Angra</td>
-                            <td>Angels</td>
-                            <td>Power Metal</td>
-                            <td><img class="img-thumbnail" src="./images/albums/Angra_angels_cry.jpg" /></td>
-                        </tr>
-                        <tr>
-                            <td>1991</td>
-                            <td>Nirvana</td>
-                            <td>Nevermind</td>
-                            <td>Grunge</td>
-                            <td><img class="img-thumbnail" src="./images/albums/nirvana-nevermind-cover.jpg" /></td>
-                        </tr>
-                        <tr>
-                            <td>2022</td>
-                            <td>Florence and the machine</td>
-                            <td>Dance Fever</td>
-                            <td>Indie Rock</td>
-                            <td><img class="img-thumbnail"
-                                    src="./images/albums/florence-and-the-machine-dance-fever.jpg" /></td>
-                        </tr>
-                        <tr>
-                            <td>2021</td>
-                            <td>Alice Phoebe Lou</td>
-                            <td>Glow</td>
-                            <td>Folk</td>
-                            <td><img class="img-thumbnail" src="./images/albums/alice-phoebe-lou-glow-cover.jpg" /></td>
-                        </tr>
-                        <tr>
-                            <td>1995</td>
-                            <td>Radiohead</td>
-                            <td>The Bends</td>
-                            <td>Brit Rock</td>
-                            <td><img class="img-thumbnail" src="./images/albums/radiohead-the-bends-cover.jpg" /></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped">
+                        <caption class="caption-top">Meilleurs albums du monde</caption>
+                        <thead>
+                            <tr>
+                                <th>Année</th>
+                                <th>Groupe</th>
+                                <th>Album</th>
+                                <th>Style</th>
+                                <th>Cover</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1993</td>
+                                <td>Angra</td>
+                                <td>Angels</td>
+                                <td>Power Metal</td>
+                                <td><img class="img-thumbnail" src="./images/albums/Angra_angels_cry.jpg" /></td>
+                            </tr>
+                            <tr>
+                                <td>1991</td>
+                                <td>Nirvana</td>
+                                <td>Nevermind</td>
+                                <td>Grunge</td>
+                                <td><img class="img-thumbnail" src="./images/albums/nirvana-nevermind-cover.jpg" /></td>
+                            </tr>
+                            <tr>
+                                <td>2022</td>
+                                <td>Florence and the machine</td>
+                                <td>Dance Fever</td>
+                                <td>Indie Rock</td>
+                                <td><img class="img-thumbnail"
+                                        src="./images/albums/florence-and-the-machine-dance-fever.jpg" /></td>
+                            </tr>
+                            <tr>
+                                <td>2021</td>
+                                <td>Alice Phoebe Lou</td>
+                                <td>Glow</td>
+                                <td>Folk</td>
+                                <td><img class="img-thumbnail" src="./images/albums/alice-phoebe-lou-glow-cover.jpg" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1995</td>
+                                <td>Radiohead</td>
+                                <td>The Bends</td>
+                                <td>Brit Rock</td>
+                                <td><img class="img-thumbnail" src="./images/albums/radiohead-the-bends-cover.jpg" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </article>
             <article class="col-md-3">
                 <div class="card">
@@ -369,10 +374,23 @@
                     </form>
                 </div>
                 <div data-content="video">
-
+                    <figure class="ratio ratio-16x9 small-video">
+                        <iframe frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/x28yeg"
+                            allowfullscreen title="Dailymotion Video Player"></iframe>
+                    </figure>
                 </div>
                 <div data-content="thoughs">
-                    
+                    <blockquote>
+                        La Magicienne : Les ogres sont sensibles.<br />
+                        Le Ranger : Rien à foutre.<br />
+                        La Magicienne : Les ogres sont parfois poètes.<br />
+                        Le Ranger : Ça nous intéresse pas.<br />
+                        La Magicienne : Les ogres peuvent chanter et danser.<br />
+                        Le Ranger : J'ai dit : ça nous intéresse pas.<br />
+                        La Magicienne : Un ogre peut faire la cuisine ou le papier peint...<br />
+                        Le Ranger : Tu veux vraiment mon poing sur la gueule ?<br />
+                        La Magicienne : Eh bien, puisque c'est comme ça, restez incultes.<br />
+                    </blockquote>
                 </div>
             </article>
         </section>

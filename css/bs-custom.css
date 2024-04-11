@@ -1,0 +1,23 @@
+/*
+[data-content]{
+    display: none;
+}
+
+.nav-active{
+    display: block;
+}
+*/
+
+blockquote{
+    padding-left: 2rem;
+    margin-left: 2rem;
+    border-left: 0.5rem solid var(--bs-blue);
+}
+
+.small-video{
+    max-width: 600px;
+}
+
+.x2{
+    font-size: calc( var(--bs-body-font-size) * 2);
+}

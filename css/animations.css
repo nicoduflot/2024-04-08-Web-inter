@@ -1,0 +1,39 @@
+.translation{
+    transition: box-shadow 2s, transform 2s;
+}
+
+
+.translation:hover{
+    box-shadow: 5px 5px black;
+    transform: translate(10px, -10px);
+    border: 3px dashed darkgreen;
+}
+
+.scale-up{
+    transition-property: transform;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.2s;
+}
+
+.scale-up:hover{
+    transform: scale(1.1);
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table tr:nth-last-of-type(odd){
+    background-color: rgba(139, 0, 0, 0.5);
+}
+
+table td{
+    border: 1px solid black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+table td:nth-last-of-type(even){
+    background-color: rgba(139, 0, 0, 0.5);
+}
