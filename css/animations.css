@@ -58,21 +58,128 @@ table td:nth-of-type(3n+1){
 
 .espace-animation{
     margin-top: 2rem;
+    margin-bottom: 2rem;
     width: 100%;
     position: relative;
-    padding-bottom: 30%;
+    padding-bottom: 40%;
     background-color: var(--site-third-color);
 }
 
 .cercle-animation{
     position: absolute;
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     background-color: orange;
     border-radius: 4rem;
-    font-size: 3rem;
+    font-size: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 3px solid var(--site-color);
+}
+
+.animation{
+    /* on décrit l'animation */
+    /* 
+    on peut utiliser le terme général animation, qui est une propriété raccourcie
+
+    animation-name : le nom de l'animation
+    animation-duration : la durée de l'animation
+    animation-timing-function : la vitesse constante ou non de l'animation
+    animation-delay : le délai avant le début de l'animation
+    animation-iteration-count : le nombe de fois que l'animation se joue
+    animation-direction : le "sens" de l'animation (par exemple du début - 0% - à la fin 100% ou l'inverse)
+
+    */
+    animation-name: fleche-qui-bouge;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* il faut définir les images clefs de l'animation */
+
+@keyframes fleche-qui-bouge {
+    0%{
+        left: 0%;
+        top: 0%;
+    }
+    25%{
+        top:0%;
+        transform: rotate(0deg);
+    }
+    70%{
+        left:75%;
+        top: 50%;
+        transform: rotate(180deg);
+    }
+    100%{
+        left: 0%;
+        top: 0%;
+        transform: rotate(-360deg);
+    }
+}
+
+.cadre{
+    width: 100%;
+    --darkgreen: #072620;
+    border: 1px solid var(--darkgreen);
+    margin: 0.5rem 0;
+    padding: 1rem;
+    height: auto;
+}
+
+.chargement{
+    height: 1rem;
+    border: 1px solid var(--darkgreen);
+    margin: 0.5rem 0;
+    padding: 1rem;
+    padding: 2px;
+}
+
+.chargement > *{
+    width: 100%;
+    height: 100%;
+    background-color: var(--darkgreen);
+    transform-origin: left center;
+}
+
+.charge-01{
+    animation: chargement 3s infinite ease-in ;
+}
+
+.charge-02{
+    animation: chargement 3s infinite ease-out ;
+}
+
+.charge-03{
+    animation: chargement 3s infinite steps(10) ;
+}
+
+@keyframes chargement {
+    from{
+        transform: scaleX(0);
+    }
+    99%{
+        transform: scaleX(1);
+    }
+    to{
+        transform: scaleX(1);
+    }
+}
+
+.clignotant{
+    animation: clignoter 0.8s infinite;
+}
+
+@keyframes clignoter {
+    0%{
+        opacity: 1;
+    }
+    40%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
