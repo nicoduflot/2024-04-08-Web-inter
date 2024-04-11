@@ -24,16 +24,55 @@ table{
     border-collapse: collapse;
 }
 
-table tr:nth-last-of-type(odd){
-    background-color: rgba(139, 0, 0, 0.5);
-}
-
 table td{
-    border: 1px solid black;
+    border: 2px solid black;
     padding-left: 1rem;
     padding-right: 1rem;
+    background-color: white;
+    color: black;
 }
 
-table td:nth-last-of-type(even){
-    background-color: rgba(139, 0, 0, 0.5);
+table td:nth-of-type(even){
+    background-color: darkgreen;
+    color: white;
+}
+
+table td:nth-of-type(3n){
+    background-color: darkred;
+    color: white;
+}
+
+table td:nth-of-type(3n+1){
+    background-color:cornflowerblue;
+    color: black;
+}
+
+#exo-anim td{
+    transition: transform 0.1s;
+}
+
+#exo-anim td:hover{
+    transform: scale(1.2);
+    box-shadow: inset 0px 0px 0px 2px black;
+}
+
+.espace-animation{
+    margin-top: 2rem;
+    width: 100%;
+    position: relative;
+    padding-bottom: 30%;
+    background-color: var(--site-third-color);
+}
+
+.cercle-animation{
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    background-color: orange;
+    border-radius: 4rem;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--site-color);
 }
