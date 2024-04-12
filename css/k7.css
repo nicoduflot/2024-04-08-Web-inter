@@ -10,8 +10,8 @@
     --dark-marine-blue-25: rgba(1, 3, 38, 0.25);
     --dark-yellow: #EBF21B;
     --dark-orange: #F25D27;
-    --width-roll: 15vw;
-    --width-roll-2: 14vw;
+    --width-roll: 50px;
+    --width-roll-2: 40px;
 }
 
 *, *::before, *::after{
@@ -49,38 +49,45 @@ h1{
 }
 
 .k7{
+    width: 300px;
+    height: 168.75px;
+    position: relative;
     border-radius: 0.8rem;
     background-color: var(--dark-marine-blue);
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#k7, #roll-1, #roll-2, #tapes{
+.k7-body, .roll-1, .roll-2, .tapes{
     position: absolute;
 }
 
-#k7{
+.k7-body{
     width: 100%;
     height: 100%;
 }
 
-#roll-1, #roll-2{
+.roll-1, .roll-2{
     width: var(--width-roll);
     height: var(--width-roll);
     background-color: var(--dark-yellow);
     border-radius: var(--width-roll);
-    box-shadow: inset 0 0 0 2vw var(--dark-violet);
+    box-shadow: inset 0 0 0 10px var(--dark-violet);
+    top: 30%;
 }
 
-#roll-1{
-    top: 30%;
+.roll-left{
+    
     left: 12%;
 }
 
-#roll-2{
-    top: 30%;
+.roll-right{
     right: 12%;
 }
 
-#tapes{
+
+
+.tapes{
     width: calc(var(--width-roll) * 1.3 );
     height: calc(var(--width-roll) * 0.7);
     border-radius: calc(var(--width-roll) * 0.07);
