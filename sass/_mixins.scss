@@ -1,0 +1,11 @@
+@mixin lienNavFooter(){
+    color: darkred;
+    text-decoration: none;
+}
+
+@mixin buttonStyle($style){
+    background-color: $style;
+    border-radius: 0.5rem;
+    border: 2px solid black;
+    color: white;
+}

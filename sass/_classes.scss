@@ -1,0 +1,17 @@
+@use "sass:map";
+@use "sass:list";
+@import "_mixins";
+@import "_variables";
+
+@each $element in $test-element{
+    #{$element}{
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@each $color, $value in $btn-colors{
+    .btn-#{$color}{
+        @include buttonStyle($style: $value);
+    }
+}

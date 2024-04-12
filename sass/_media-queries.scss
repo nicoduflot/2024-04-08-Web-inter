@@ -6,9 +6,23 @@
 
 @each $breakpoint, $value in $breakpoints{
     /* #{$breakpoint} => #{$value} */
-    @media screen and (min-width: #{$value}){
-        body > main{
-            width: #{map.get($breakpoints-limit, $breakpoint)};
+    @media screen and (min-width: #{$value}px){
+        body{
+            > main{
+                width: #{map.get($breakpoints-limit, $breakpoint)};
+            }
+            @if($value == 768){
+                > nav{
+                    ul{
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                    a, a:visited{
+                        padding-left: 0.8rem;
+                        padding-right: 0.8rem;
+                    }
+                }
+            }
         }
     }
 }
