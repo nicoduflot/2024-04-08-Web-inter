@@ -1,0 +1,19 @@
+// 
+//
+//
+//
+//  commentaire non reporté sur le css final
+//
+//
+//
+//
+
+@import "_variables";
+@import url('#{$main-font-css}');
+/* déclaration du root */
+:root{
+    font-family: '#{$main-font-name}', Arial, Helvetica, sans-serif;
+    --main-color: #{$main-color};
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+}

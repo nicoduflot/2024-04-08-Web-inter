@@ -1,0 +1,21 @@
+// couleur d'écriture principale du contenu du site
+$main-color : #333333;
+$main-font-css: 'roboto.css';
+$main-font-name: 'Roboto';
+
+// variables des breakpoints
+$breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+$breakpoints-limit: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px,
+);

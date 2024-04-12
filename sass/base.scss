@@ -1,3 +1,4 @@
-:root{
-    font-family: Arial, Helvetica, sans-serif;
-}
+@use "_root";
+@use "_general";
+@use "_structure";
+@use "_media-queries";

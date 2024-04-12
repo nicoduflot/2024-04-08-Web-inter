@@ -1,0 +1,14 @@
+@use "sass:map";
+@import "_variables";
+
+
+/* media queries */
+
+@each $breakpoint, $value in $breakpoints{
+    /* #{$breakpoint} => #{$value} */
+    @media screen and (min-width: #{$value}){
+        body > main{
+            width: #{map.get($breakpoints-limit, $breakpoint)};
+        }
+    }
+}
