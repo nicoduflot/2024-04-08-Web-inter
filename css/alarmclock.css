@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'alarmclock';
+    src: url('fonts/alarmclock.eot');
+    src: url('fonts/alarmclock.eot') format('embedded-opentype'),
+         url('fonts/alarmclock.woff2') format('woff2'),
+         url('fonts/alarmclock.woff') format('woff'),
+         url('fonts/alarmclock.ttf') format('truetype'),
+         url('fonts/alarmclock.svg#alarmclock') format('svg');
+}

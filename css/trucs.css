@@ -12,3 +12,151 @@
     border-radius: 50%;
     margin: 2rem;
 }
+
+.vignette{
+    height: 52px;
+    width: 52px;
+    border: 1px solid black;
+    background-image: url('../images/multi-vignettes-sm-01.png');
+    margin: 0.5rem;
+    border-top-right-radius: 26px;
+    border-bottom-left-radius: 26px;
+}
+
+.avatar-01{
+    background-position-x: 0;
+    background-position-y: 0;
+}
+
+.avatar-02{
+    background-position-x: 50px;
+    background-position-y: 0;
+}
+
+.avatar-03{
+    background-position-x: 0;
+    background-position-y: 50px;
+}
+
+.avatar-04{
+    background-position-x: 50px;
+    background-position-y: 50px;
+}
+
+.triangle-rouge{
+    width: 0;
+    height: 0;
+    --taille-base: 50px;
+    --taille-borders: calc(var(--taille-base) / 2);
+    border-color: transparent;
+    border-style: solid;
+    border-left-width: calc(var(--taille-base) * 0.866 );
+    border-top-width: var(--taille-borders) ;
+    border-bottom-width: var(--taille-borders) ;
+    border-left-color: red;
+    margin: 2rem;
+}
+
+p:nth-of-type(odd)::before{
+    content: "";
+    height: 0;
+    width: 0;
+    display: inline-block;
+    --taille-base: 0.8rem;
+    --taille-borders: calc(var(--taille-base) / 2);
+    border-color: transparent;
+    border-style: solid;
+    border-left-width: calc(var(--taille-base) * 0.866 );
+    border-top-width: var(--taille-borders) ;
+    border-bottom-width: var(--taille-borders) ;
+    border-left-color: red;
+}
+
+p:nth-of-type(even)::before{
+    content: "";
+    height: 0;
+    width: 0;
+    display: inline-block;
+    --taille-base: 0.7rem;
+    --taille-borders: calc(var(--taille-base) / 2);
+    border-color: transparent;
+    border-style: solid;
+    border-left-width: calc(var(--taille-base) * 0.866 );
+    border-top-width: var(--taille-borders) ;
+    border-bottom-width: var(--taille-borders) ;
+    border-left-color: darkgreen;
+}
+
+.test-boxshadow{
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    margin: 2rem;
+    box-shadow: 
+        0 0 0 10px darkred, 
+        0 0 0 20px darkblue, 
+        inset 0 0 0 10px darkgreen,
+        inset 0 0 0 20px darkmagenta;
+    border: 10px solid gold;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+
+.atari{
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    margin: 2rem;
+    text-transform: uppercase;
+    border-left: 10px solid gold;
+    color:  white;
+    font-weight: bold;
+    padding-top: 100px;
+    padding-left: 20px;
+    box-shadow: -10px 0 0 darkred, -20px 0 0 orange, inset 10px 0 0 darkgreen;
+    border-top-left-radius: 50px;
+}
+
+.badge{
+    width: 338px;
+    height: 338px;
+    background-color: darkred;
+    border-radius: 50%;
+    position: relative;
+}
+
+.imgFg, .imgMg, .imgBg{
+    width: 338px;
+    height: 338px;
+    border-radius: 50%;
+}
+
+.txtFg{
+    position: absolute;
+    top: 150px;
+    z-index: 4;
+    width: 100%;text-align: center;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 0 0 5px black;
+}
+
+.imgFg{
+    background-image: url(../images/pip-boy.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    z-index: 3;
+}
+
+.imgMg{
+    background-image: url(../images/superposition/logo-pt2.png);
+    position: absolute;
+    z-index: 2;
+}
+
+.imgBg{
+    background-image: url(../images/superposition/logo-pt1.png);
+    position: absolute;
+    z-index: 1;
+}
