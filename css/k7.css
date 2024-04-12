@@ -8,7 +8,7 @@
     --dark-violet: #58238C;
     --dark-marine-blue: #010326;
     --dark-marine-blue-25: rgba(1, 3, 38, 0.25);
-    --dark-yellow: #EBF21B;
+    --dark-yellow: rgb(235, 242, 27);
     --dark-orange: #F25D27;
     --width-roll: 50px;
     --width-roll-2: 40px;
@@ -21,6 +21,10 @@
 h1{
     font-size: calc( 3rem + 2vh) ;
     margin: 0;
+}
+
+img{
+    max-width: 100%;
 }
 
 *.ratio{
@@ -67,13 +71,29 @@ h1{
     height: 100%;
 }
 
-.roll-1, .roll-2{
+.roll-1{
     width: var(--width-roll);
     height: var(--width-roll);
     background-color: var(--dark-yellow);
     border-radius: var(--width-roll);
     box-shadow: inset 0 0 0 10px var(--dark-violet);
     top: 30%;
+}
+
+.rotation{  
+    animation-name: rotation;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotation {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }
 
 .roll-left{
@@ -84,8 +104,6 @@ h1{
 .roll-right{
     right: 12%;
 }
-
-
 
 .tapes{
     width: calc(var(--width-roll) * 1.3 );
