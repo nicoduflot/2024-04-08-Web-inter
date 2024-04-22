@@ -160,3 +160,58 @@ console.log(cars);
 console.log(rest);
 
 /* Exercice : créer une copie d'un tableau */
+let carsClone = null;
+/* carsClone = cars; //ça marche pas  */
+/* carsClone = [...cars]; // ça marche mais c'est mieux d'utiliser la méthode .slice() */
+/* carsClone = [].concat(cars) // ça marche mais c'est mieux d'utiliser la méthode .slice() */
+console.log([].concat(cars));
+console.log([].concat('23', '12'));
+
+carsClone = cars.slice();
+console.log(carsClone);
+carsClone.pop();
+console.log(carsClone);
+console.log(cars);
+
+const tabExemple = '12.5,56.3,12,0.5'.split(',');
+console.log(tabExemple);
+
+let resultat = 0;
+for(value of tabExemple){
+    resultat = resultat + parseFloat(value);
+}
+console.log(resultat);
+
+const chaineExemple = [12.5,56.3,12,0.5].join(',');
+console.log(chaineExemple);
+
+/* inverser un mot */
+const mot = 'kayane';
+const motInverse = mot.split('').reverse().join('');
+console.log(motInverse);
+
+/* trier un tableau */
+tabExemple.sort().reverse();
+console.log(tabExemple);
+console.table(tabExemple);
+
+/* et les tableau à plusieurs dimensions */
+/* 
+
+int tab(5,5);
+
+*/
+
+let carsTest = [
+    ['Fiat', 1996],
+    ['Kya', 1995],
+    ['Kya', 1990],
+    ['Ford', 1950]
+];
+
+console.log(carsTest);
+console.table(carsTest);
+
+console.table(carsTest.sort());
+
+/* parcourir et afficher les valeurs du tableau */
