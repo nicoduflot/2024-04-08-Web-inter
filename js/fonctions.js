@@ -115,6 +115,7 @@ console.log(maFonctionAnonyme());
             'banane',
             'tomate',
             'pêche',
+            'pomme',
             'banane',
             'tomate',
             'banane',
@@ -122,7 +123,35 @@ console.log(maFonctionAnonyme());
             'tomate',
             'pêche',
             'banane',
-            'tomate'
+            'tomate',
+            'pomme'
         ];
 
-        let tableauxDoublons = [];
+        
+        function trouverDoublons(tableau){
+            tableau.sort();
+            let tableauFiltre = [];
+            let tableauxDoublons = [];
+            let cpt = 1;
+            tableau.map(function(element, index, tab){
+                if(element === tab[index+1]){
+                    cpt = cpt + 1;
+                }else{
+                    if(cpt > 1){
+                        tableauxDoublons.push(`l'élément' ${element} est présent ${cpt} fois`);
+                    }
+                    cpt = 1;
+                    tableauFiltre.push(element);
+                }
+            });
+            return [tableauFiltre, tableauxDoublons];
+        }
+
+        let fruitsFiltres = trouverDoublons(tableauDeFruits.slice());
+
+        let tableauFiltre = fruitsFiltres[0];
+        let tableauxDoublons = fruitsFiltres[1];
+
+        console.log('Tableau non filtré', tableauDeFruits);
+        console.log('Tableau filtré', tableauFiltre);
+        console.log('Les doublons', tableauxDoublons);
