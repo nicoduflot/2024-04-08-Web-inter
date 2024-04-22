@@ -62,3 +62,73 @@ function ecomerce(lang, devise, server){
 
 ecomerce(LANGUK, POUND, SERVERFR);
 
+/**
+ * Types principaux : Primitif - Référence
+ * 
+ * Primitif
+ * number       => nombre (entier, flottant, etc. )
+ * bool         => booléen ( vrai true ou faux false )
+ * 
+ * Référence
+ * String       => chaîne de caractère
+ * Array        => tableau de données
+ * Object       => objet
+ * JSON         => JavaScript Obbjecty Notation
+ * 
+ * 'toto': {
+ *      'age': 12,
+ *      'hobby': 'Mange des BN',
+ *      'adresse': {
+ *          'voie': 'Rue de la tranquilité',
+ *          'numero': '12'
+ *      }
+ * }
+ * 
+ */
+
+/**
+ * 
+ * Opérateurs
+ * 
+ * Mathématiques
+ * 
+ * +    => addition (autrefois utilisé aussi pour la concaténation INTERDIT X)
+ * -    => soustraction
+ * *    => multiplication
+ * **   => Puissance (remplace Math.pow())
+ *      => math.pow(2, 3);
+ *      => 2**3
+ * /    => division 10 / 3 = 3.33333333
+ * %    => modulo   10 % 3 = 1
+ * 
+ * il n'y a pas de quoi réccupérer le quotient
+ * 
+ * let res = parseInt(10/3);
+ * 
+ *          => parseInt(3.333333) => 3;
+ * 
+ * ++   =>  Incrémentation on augmente de 1 
+ * let cpt = 1;
+ * cpt ++ <=> cpt = cpte + 1;
+ * 
+ * --   =>  Décrémentation on diminue de 1
+ * cpt-- <=> cpt = cpt - 1;
+ * 
+ */
+
+let cpt = 0;
+cpt = cpt + 1; /* cpt = 1 */
+console.log(cpt++); /* affiche 1 puis cpt passe à 2 */
+console.log(cpt); /* affiche 2 */
+console.log(cpt + 1); /* affiche le résultat de cpt + 1 => 3 */
+
+console.log(++cpt); /* affiche 4 */
+
+cpt += 1; /* cpt = cpt + 1 */
+console.log(cpt); /* affiche 5 */
+
+let titi = 'toto';
+
+titi += ' tutu';
+
+console.log(titi);
