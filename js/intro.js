@@ -132,3 +132,66 @@ let titi = 'toto';
 titi += ' tutu';
 
 console.log(titi);
+
+/**
+ * Logiques
+ * 
+ * ET (AND)
+ * &&
+ *  a && b => a est vrai et b est vrai => vrai
+ *  a && b => a est vrai et b est faux => faux
+ *  a && b => a est faux et b est faux => faux
+ *  a && b => a est faux et b est vrai => faux
+ * 
+ * OU (OR)
+ * || 
+ *  a || b => a est vrai et b est vrai => vrai
+ *  a || b => a est vrai et b est faux => vrai
+ *  a || b => a est faux et b est faux => faux
+ *  a || b => a est faux et b est vrai => vrai
+ * 
+ * OU EXCLUSIF BINAIRE (XOR)
+ * ^
+ * seulement une des condition doit être vrai pour renvoyer vrai
+ *  a ^ b => a est vrai et b est vrai => faux
+ *  a ^ b => a est vrai et b est faux => vrai
+ *  a ^ b => a est faux et b est faux => faux
+ *  a ^ b => a est faux et b est vrai => vrai
+ * 
+ * NON (NOT)
+ * ! 
+ * vrai est non faux
+ * faux est non vrai
+ * !a       => a est vrai, !a = faux
+ * !a       => a est faux, !a = vrai
+ * 
+ */
+
+/**
+ * Comparaison
+ * 
+ * <        => inférieur srtictement à
+ * >        => supérieur srtictement à
+ * <=       => inférieur ou égal à
+ * >=       => supérieur ou égal à
+ * 
+ * ==       => comapraison de valeur (non stricte)
+ * ===      => comparaison devaleur ET de type (stricte)
+ * 
+ * 2 == 2   => vrai
+ * 2 == '2' => vrai
+ * 
+ * 2 === 2  => vrai
+ * 2 === '2'=> faux
+ * 
+ */
+
+/*
+        créer deux variables nombre et afficher dans la console
+            leur addition
+            leur soustraction
+            leur multiplication
+                 division
+                 le modulo
+            var1 puissance var2
+*/
