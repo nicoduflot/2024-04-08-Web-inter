@@ -85,3 +85,36 @@ console.log('------------ boucle for of -----------------');
 for(let value of cars){
     console.log(value);
 }
+
+console.log('---------- boucle tant que (while) -------------');
+cpt = 0;
+while(cpt < cars.length){
+    console.log(cars[cpt]);
+    cpt = cpt + 1;
+}
+
+console.log('---------- boucle faire tant que ( dowhile) -------------');
+cpt = 0;
+do{
+    console.log(cars[cpt]);
+    cpt = cpt + 1;
+}while(cpt < cars.length);
+
+
+console.log('---------- méthode pour chaque élément .forEach() -------------');
+cars.forEach(function(value, index, tab){
+    console.log(value, index, tab);
+});
+
+let tabTarif = [12, 55.6, 23];
+const TVA = 0.055;
+
+console.log(tabTarif);
+
+tabTarif.forEach(function(valeur, index, tab){
+    tab[index] = valeur * (1 +TVA);
+});
+
+console.log(tabTarif);
+
+/* on mange */
