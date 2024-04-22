@@ -215,3 +215,79 @@ console.table(carsTest);
 console.table(carsTest.sort());
 
 /* parcourir et afficher les valeurs du tableau */
+/* une méthode : boucle imbriquée */
+console.log('--------------- for imbriqués ---------------');
+for(let i = 0; i < carsTest.length; i = i + 1){
+    for(j = 0; j < carsTest[i].length; j = j +1){
+        console.log(carsTest[i][j]);
+    }
+}
+
+console.log('--------------- for of imbriqués ---------------');
+for(value of carsTest){
+    for(subValue of value){
+        console.log(subValue);
+    }
+}
+
+/* une méthode .foreach() */
+console.log('--------------- forEach ---------------');
+carsTest.forEach(function(value){
+    value.forEach(function(value){
+        console.log(value);
+    });
+});
+
+/* une méthode .map() */
+console.log('--------------- .map() ---------------');
+carsTest.map(function(value){
+    value.map(function(value){
+        console.log(value);
+    });
+});
+
+/* trouver un élément dans un tableau .find() */
+
+console.log('--------------- .found() ---------------');
+const arrayNum = [5, 20, 8, 130, 54, 12, 44];
+/* trouver le premier élément tu bleau strictement supérieur à 20 */
+const found = arrayNum.find(function(element){
+    /*
+    if(element > 20){
+        return element;
+    }
+    */
+   return element > 20;
+});
+
+console.log(found);
+console.log('--------------- .filter() ---------------');
+/* trouver tous les éléments tu bleau strictement supérieurs à 20 */
+const filter = arrayNum.filter(function(element){
+    return element > 20;
+});
+
+console.log(filter);
+
+const filter2 = arrayNum.filter(
+    /*
+    function(element){
+        return element > 20;
+    }
+    */
+   /*
+   (element)=>{
+       return element > 20;
+    }
+    */
+   /*
+   element=>{
+       return element > 20;
+    }
+    */
+    element=>element > 20
+);
+
+console.log(filter2);
+
+/* l'opérateur => arrow est surtout utilisé pour gérer les CONSÉQUENCES */
