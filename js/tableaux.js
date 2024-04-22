@@ -291,3 +291,22 @@ const filter2 = arrayNum.filter(
 console.log(filter2);
 
 /* l'opérateur => arrow est surtout utilisé pour gérer les CONSÉQUENCES */
+
+const monObjet = {
+    nom: 'toto',
+    numbers: [5, 20, 8, 130, 54, 12, 44],
+    affTab: function(){
+        console.log(this);
+        this.numbers.map((element)=>{
+            console.log(this);
+            console.log(element);
+        });
+    }
+};
+
+/*
+console.log(monObjet);
+console.log(monObjet.nom);
+console.log(monObjet.numbers);
+*/
+console.log(monObjet.affTab());
