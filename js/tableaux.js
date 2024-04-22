@@ -101,7 +101,7 @@ do{
 }while(cpt < cars.length);
 
 
-console.log('---------- méthode pour chaque élément .forEach() -------------');
+console.log('---------- méthode pour chaque élément d\'un objet itérable .forEach() -------------');
 cars.forEach(function(value, index, tab){
     console.log(value, index, tab);
 });
@@ -117,4 +117,46 @@ tabTarif.forEach(function(valeur, index, tab){
 
 console.log(tabTarif);
 
-/* on mange */
+/*  */
+console.log('---------- méthode pour parcourir chaque élément d\'un tableau .map() -------------');
+
+cars.map(function(value, index, tab){
+    console.log(value, index, tab);
+});
+
+console.log('---------- méthode pour parcourir chaque élément d\'un tableau .entrie() -------------');
+for(let entry of cars.entries()){
+    console.log(entry);
+}
+
+cars.push('Seat', 'Toyota', 'Volskwagen');
+
+/* Extraire la dernière valeur d'un tableau .pop(); */
+console.log(cars);
+const lastEntry = cars.pop();
+console.log(cars);
+console.log(lastEntry);
+
+/* Extraire la première valeur d'un tableau .shift(); */
+const firstEntry = cars.shift();
+console.log(cars);
+console.log(firstEntry);
+
+/* Extraire, remplacer, ajouter une ou plusieurs valeurs dans un tableau, n'importe où : .splice() */
+/* .splice : extraire des valeurs */
+
+const removed = cars.splice(1, 3);
+console.log(removed);
+console.log(cars);
+
+/* remplacer */
+const replaced = cars.splice(1, 1, 'Alpine', 'Mazda');
+console.log(replaced);
+console.log(cars);
+
+/* ajouter */
+const rest = cars.splice(1, 0, firstEntry, lastEntry, removed[0], removed[1], removed[2], replaced[0]);
+console.log(cars);
+console.log(rest);
+
+/* Exercice : créer une copie d'un tableau */
