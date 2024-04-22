@@ -187,11 +187,24 @@ console.log(titi);
  */
 
 /*
-        créer deux variables nombre et afficher dans la console
-            leur addition
-            leur soustraction
-            leur multiplication
-                 division
-                 le modulo
-            var1 puissance var2
+    créer deux variables nombre et afficher dans la console le résultat de
+        leur addition
+        leur soustraction
+        leur multiplication
+                division
+                le modulo
+                le quotient de la division
+        var1 puissance var2
 */
+
+const a = 42;
+const b = 66;
+console.log(`const a = ${a}, const b = ${b}`);
+console.log(`${a} + ${b} = ${a+b}`);
+console.log(`${a} - ${b} = ${a-b}`);
+console.log(`${a} * ${b} = ${a*b}`);
+console.log(`${a} / ${b} = ${a/b}`);
+console.log(`${b} % ${a} = ${b%a}`);
+console.log(`${b} / ${a} = ${b} - ${b%a},  ${ b - (b%a) }`);
+console.log(`${a} puissance ${b} = ${a**b}`);
+
