@@ -197,14 +197,14 @@ console.log(titi);
         var1 puissance var2
 */
 
-const a = 42;
-const b = 66;
-console.log(`const a = ${a}, const b = ${b}`);
-console.log(`${a} + ${b} = ${a+b}`);
-console.log(`${a} - ${b} = ${a-b}`);
-console.log(`${a} * ${b} = ${a*b}`);
-console.log(`${a} / ${b} = ${a/b}`);
-console.log(`${b} % ${a} = ${b%a}`);
-console.log(`${b} / ${a} = ${b} - ${b%a},  ${ b - (b%a) }`);
-console.log(`${a} puissance ${b} = ${a**b}`);
+const x = 42;
+const y = 66;
+console.log(`const x = ${x}, const y = ${y}`);
+console.log(`${x} + ${y} = ${x+y}`);
+console.log(`${x} - ${y} = ${x-y}`);
+console.log(`${x} * ${y} = ${x*y}`);
+console.log(`${x} / ${y} = ${x/y}`);
+console.log(`${y} % ${x} = ${yb%x}`);
+console.log(`${y} / ${x} = ${y} - ${y%x},  ${ y - (y%x) }`);
+console.log(`${x} puissance ${y} = ${x**y}`);
 

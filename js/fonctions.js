@@ -100,58 +100,111 @@ console.log(maFonctionAnonyme());
 })('Nikko', 'toto');
 
 /*
-        exercice
-        
-        créer une fonction qui va parcourir un tableau de données tableauDeFruits 
-        et renvoyer une liste des doublons dans le tableau tableauxDoublons
+exercice
 
-        Pensez a utiliser .map()
+créer une fonction qui va parcourir un tableau de données tableauDeFruits 
+et renvoyer une liste des doublons dans le tableau tableauxDoublons
 
-        le fruit : <fruit> est présent x fois
+Pensez a utiliser .map()
 
-        */
+le fruit : <fruit> est présent x fois
 
-        let tableauDeFruits = [
-            'banane',
-            'tomate',
-            'pêche',
-            'pomme',
-            'banane',
-            'tomate',
-            'banane',
-            'fraise',
-            'tomate',
-            'pêche',
-            'banane',
-            'tomate',
-            'pomme'
-        ];
+*/
 
-        
-        function trouverDoublons(tableau){
-            tableau.sort();
-            let tableauFiltre = [];
-            let tableauxDoublons = [];
-            let cpt = 1;
-            tableau.map(function(element, index, tab){
-                if(element === tab[index+1]){
-                    cpt = cpt + 1;
-                }else{
-                    if(cpt > 1){
-                        tableauxDoublons.push(`l'élément' ${element} est présent ${cpt} fois`);
-                    }
-                    cpt = 1;
-                    tableauFiltre.push(element);
-                }
-            });
-            return [tableauFiltre, tableauxDoublons];
+const tableauDeFruits = [
+    'banane',
+    'tomate',
+    'pêche',
+    'pomme',
+    'banane',
+    'tomate',
+    'banane',
+    'fraise',
+    'tomate',
+    'pêche',
+    'banane',
+    'tomate',
+    'pomme'
+];
+
+
+function trouverDoublons(tableau){
+    tableau.sort();
+    let tableauFiltre = [];
+    let tableauxDoublons = [];
+    let cpt = 1;
+    tableau.map(function(element, index, tab){
+        if(element === tab[index+1]){
+            cpt = cpt + 1;
+        }else{
+            if(cpt > 1){
+                tableauxDoublons.push(`l'élément' ${element} est présent ${cpt} fois`);
+            }
+            cpt = 1;
+            tableauFiltre.push(element);
         }
+    });
+    return [tableauFiltre, tableauxDoublons];
+}
 
-        let fruitsFiltres = trouverDoublons(tableauDeFruits.slice());
+const fruitsFiltres = trouverDoublons(tableauDeFruits.slice());
 
-        let tableauFiltre = fruitsFiltres[0];
-        let tableauxDoublons = fruitsFiltres[1];
+const tableauFiltre = fruitsFiltres[0];
+const tableauxDoublons = fruitsFiltres[1];
 
-        console.log('Tableau non filtré', tableauDeFruits);
-        console.log('Tableau filtré', tableauFiltre);
-        console.log('Les doublons', tableauxDoublons);
+console.log('Tableau non filtré', tableauDeFruits);
+console.log('Tableau filtré', tableauFiltre);
+console.log('Les doublons', tableauxDoublons);
+
+
+/* La destructuration */
+const liste = [1, 2, 3, 4];
+/* assigner les valeurs de la liste au variables suivante a, b, c */
+/*
+const a = liste[0];
+const b = liste[1];
+const c = liste[2];
+*/
+
+const[a, b, c] = liste;
+console.log(`a = ${a}, b = ${b}, c = ${c}, `);
+
+const[d, , f, g] = liste;
+console.log(`d = ${d}, f = ${f}, g = ${g}, `);
+
+const[h, i, j, k = 0, l = 5] = liste;
+console.log(`h = ${h}, i = ${i}, j = ${j}, k = ${k}, l = ${l}`);
+
+function unTruc(unTruc = 12, uneOption = false, ...valeurs){
+    console.log(unTruc);
+    console.log(uneOption);
+    console.log(valeurs);
+    const [a = 0, b = false, c = 'Compta'] = valeurs;
+    console.log(a, b, c);
+}
+
+unTruc();
+unTruc(13, true, 123.03, 'deebweeb', 101, 56, 85);
+
+let[val01, val02] = [42, 66];
+console.log(val01, val02);
+/* échanger les valeur entre val01 et val02 */
+/*
+let valTampon = val01;
+val01 = val02;
+val02 = valTampon;
+*/
+[val01, val02] = [val02, val01];
+
+console.log(val01, val02);
+
+/* utiliser la fonction de filtrage des doublons, récupération des réponse en destructuration */
+const tabNumbers = [5, 56, 2, 3004, 2, 5, 28, 49, 3004];
+const [numbersFiltered, numbersDouble] =  trouverDoublons(tabNumbers);
+
+console.log('Tableau non filtré', tabNumbers);
+console.log('Tableau filtré', numbersFiltered);
+console.log('Les doublons', numbersDouble);
+
+/* la destructuration fonctionne aussi avec les objets ! */
+/* mais avant, un café */
