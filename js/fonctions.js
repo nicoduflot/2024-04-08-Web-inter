@@ -252,8 +252,6 @@ console.log(perso1, perso1.coupSpecial(), perso2, perso2.coupSpecial());
 [perso1.coupSpecial, perso2.coupSpecial] = [perso2.coupSpecial, perso1.coupSpecial];
 console.log(perso1, perso1.coupSpecial(), perso2, perso2.coupSpecial());
 
-/* Exo destructuration */
-
 /* 
 
 créer une fonction avec en paramètre un taux, une liste de prix.
@@ -266,3 +264,12 @@ function tauxPromo(taux, ...prixHT){
 }
 
 */
+
+function tauxPromo(taux, ...prixHT){
+    prixHT.map((element, index)=>{
+        prixHT[index] = element*taux;
+    });
+    return prixHT;
+}
+const tauxTTC = 1.1;
+console.log(`le taux appliqué : ${tauxTTC}`,tauxPromo(tauxTTC, 23, 56, 80));
