@@ -15,6 +15,7 @@ window.addEventListener('DOMContentLoaded', function(event){
     const btnTestezMoi = document.getElementById('testez-moi');
     console.log(btnTestezMoi);
     btnTestezMoi.addEventListener('click', function(event){
+        event.stopPropagation();
         console.log(btnTestezMoi.value);
         console.log(event);
     });
@@ -22,7 +23,8 @@ window.addEventListener('DOMContentLoaded', function(event){
     document.getElementById('ajoutHTML').innerHTML = '<button id="toto">toto</button>';
     const toto = document.querySelector('#toto');
     console.log(toto);
-    toto.addEventListener('click', function(){
+    toto.addEventListener('click', function(event){
+        event.stopPropagation();
         console.log('oui ça marche');
     });
     /* 
@@ -40,5 +42,31 @@ window.addEventListener('DOMContentLoaded', function(event){
     - quand le bouton est cliqué, récupérer tous les paragraphes de la page sauf celui possédant la classe "special"
     - afficher la variable qui aura récupéré tous les paragraphes dans la console
     */
+
+    const allP = document.querySelectorAll('p:not(p.special)');
+    document.getElementById('checkP').addEventListener('click', function(){
+        console.log(allP);
+    });
+
+    allP.forEach(function(element){
+        element.addEventListener('click', function(){
+            document.getElementById('showP').innerHTML = this.innerHTML;
+        });
+    });
+
+    const imgOver = document.getElementById('imgOver');
+    imgOver.addEventListener('mouseenter', function(){
+        this.setAttribute('src', './images/pip-boy-thumb-up.png');
+        this.setAttribute('alt', 'pip-boy avec le bras droit');
+        this.nextElementSibling.innerHTML = 'Pip boy avec son bras droit';
+    });
+    
+    imgOver.addEventListener('mouseleave', function(){
+        this.setAttribute('src', './images/pip-boy-thumb-down.png');
+        this.setAttribute('alt', 'pip-boy sans bras droit');
+        this.nextElementSibling.innerHTML = 'Pip boy sans son bras droit';
+    });
+
+    
 
 });
