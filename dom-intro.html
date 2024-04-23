@@ -6,9 +6,11 @@
     <meta name="description" content="Formation pour la POEI Développeur web et web mobile" />
     <title>DAWAN - Webmaster Intermédiaire - Introduction </title>
     <link rel="stylesheet" href="./css/style.css" media="screen" />
-    <script src="./js/intro.js"></script>
-    <script src="./js/tableaux.js"></script>
-    <script src="./js/fonctions.js"></script>
+    <script language="javascript">
+        console.log(document.getElementsByTagName('meta'));
+        console.log(document.getElementsByTagName('p'));
+    </script>
+    <script src="./js/dom-intro.js"></script>
 </head>
 <body>
     <header id="top">
@@ -68,9 +70,23 @@
         <section>
             <article id="balise-texte">
                 <header>
-                    <h2></h2>
+                    <h2>D.O.M. Document Object Model</h2>
                 </header>
-                
+                <p>
+                    le <b>DOM</b> nous permet de repérer, analyser, modifier et supprimer des éléments de la page HTML
+                </p>
+                <p class="stupide toto" name="stupide">
+                    Il faut que tous les éléments soient chargés pour qu'il soit
+                    possible d'agir sur eux avec JS.
+                    On écoute l'évènement de la fenêtre (window) DOMContentLoaded qui survient
+                    quand la page est totalement chargée.
+                </p>
+                <p>
+                    <button id="testez-moi" value="toto">Testez-moi !</button>
+                </p>
+                <p id="ajoutHTML">
+                    
+                </p>
                 <footer>
                     <a href="./media.html"><button>Lire +</button></a>
                 </footer>
@@ -100,4 +116,7 @@
         </div>
     </footer>
 </body>
+<script>
+    console.log('fin du chargement de la page');
+</script>
 </html>
