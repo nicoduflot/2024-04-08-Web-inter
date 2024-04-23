@@ -27,9 +27,31 @@ window.addEventListener('DOMContentLoaded', function(){
             document.getElementById('coordonnees').innerText = this.innerText;
         });
         td.appendChild(content);
-        tr.append(td);
-        
-        /* preventdefault() */
-
+        tr.append(td);        
     });
+    
+    /* preventdefault() */
+    allPLinks = document.querySelectorAll('a.testPreventLink');
+    allPLinks.forEach(element => {
+        element.addEventListener('click', function(event){
+            event.preventDefault();
+            console.log(this.innerText);
+        });
+    });
+
+
+    /* 
+    ajouter un span dans le paragraphe
+    
+    - répérer le clic sur le bouton
+    - créer un span
+    - dans le span, ajouter la classe testSpan
+    - dans le span, ajouter le numéro du span créé
+        - si c'est le premier, n° 1, le deuxième : n° 2, etc
+    - si on clique sur le span, on le supprime du DOM (chercher dans la doc)
+    - le compteur de span reste inchangé
+
+    */
+
+
 });

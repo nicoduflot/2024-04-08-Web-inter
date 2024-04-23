@@ -190,6 +190,22 @@ table#conteneur td{
     cursor: pointer;
 }
 
+p#test{
+    padding: 1rem; 
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.testSpan{
+    border: 3px solid #6aa241;
+    width: 200px;
+    height: 50px;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+
 /* déclaration de structure */
 body{
     margin: 0;
