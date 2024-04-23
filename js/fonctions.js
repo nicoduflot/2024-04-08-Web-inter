@@ -207,4 +207,62 @@ console.log('Tableau filtré', numbersFiltered);
 console.log('Les doublons', numbersDouble);
 
 /* la destructuration fonctionne aussi avec les objets ! */
-/* mais avant, un café */
+
+const jeanNeige = {
+    lastName: 'Sno',
+    firstName: 'Jon',
+    job: 'NightWatch',
+    knowledge(){
+        return `You 'now notin' ${this.firstName} ${this.lastName} !`;
+    }
+};
+
+console.log(jeanNeige.firstName);
+console.log(jeanNeige.knowledge());
+
+const {firstName, job} = jeanNeige;
+
+console.log(firstName);
+console.log(job);
+
+const {
+    lastName: prenom1,
+    firstName: nom1,
+} = jeanNeige;
+
+console.log(nom1, prenom1);
+
+const perso1 = {
+    nom: 'LeCanard',
+    prenom: 'Herbert',
+    coupSpecial: function(){
+        return 'Pichenette';
+    }
+}
+
+const perso2 = {
+    nom: 'LeDragon',
+    prenom: 'Marvin',
+    coupSpecial: function(){
+        return 'TONG DEUM !!';
+    }
+}
+
+console.log(perso1, perso1.coupSpecial(), perso2, perso2.coupSpecial());
+[perso1.coupSpecial, perso2.coupSpecial] = [perso2.coupSpecial, perso1.coupSpecial];
+console.log(perso1, perso1.coupSpecial(), perso2, perso2.coupSpecial());
+
+/* Exo destructuration */
+
+/* 
+
+créer une fonction avec en paramètre un taux, une liste de prix.
+
+la fonction renvoie un tableau avec les prix sur lesquel le taux est appliqué
+
+function tauxPromo(taux, ...prixHT){
+    // code
+    return tabTTC;
+}
+
+*/
