@@ -177,13 +177,15 @@ img, video{
     padding-bottom: calc( 29.7 / 21 * 100% );
 }
 
-table.tabEventTarget{
+table.tabEventTarget,
+table#conteneur{
     border-collapse: collapse;
 }
 
-table.tabEventTarget td{
+table.tabEventTarget td,
+table#conteneur td{
     border: 2px solid darkred;
-    width: 10%;
+    width: 10vw;
     text-align: center;
     cursor: pointer;
 }
