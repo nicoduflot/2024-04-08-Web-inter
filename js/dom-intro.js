@@ -22,6 +22,9 @@ window.addEventListener('DOMContentLoaded', function(event){
     document.getElementById('ajoutHTML').innerHTML = '<button id="toto">toto</button>';
     const toto = document.querySelector('#toto');
     console.log(toto);
+    toto.addEventListener('click', function(){
+        console.log('oui ça marche');
+    });
     /* 
     ça marche mais ce n'est pas propre.
     il est préférable de créer l'élément à l'aide des méthodes de document 
@@ -30,6 +33,12 @@ window.addEventListener('DOMContentLoaded', function(event){
         - créer le noeud de texte
         - ajouter le noeud de texte à l'intérieur du bouton
         - ajouter le bouton en enfant de l'élément paragraphe
+    */
+
+    /* 
+    - abonner le bouton "tester les paragraphes" à l'événement click
+    - quand le bouton est cliqué, récupérer tous les paragraphes de la page sauf celui possédant la classe "special"
+    - afficher la variable qui aura récupéré tous les paragraphes dans la console
     */
 
 });
