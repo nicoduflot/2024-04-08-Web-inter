@@ -177,6 +177,17 @@ img, video{
     padding-bottom: calc( 29.7 / 21 * 100% );
 }
 
+table.tabEventTarget{
+    border-collapse: collapse;
+}
+
+table.tabEventTarget td{
+    border: 2px solid darkred;
+    width: 10%;
+    text-align: center;
+    cursor: pointer;
+}
+
 /* déclaration de structure */
 body{
     margin: 0;
