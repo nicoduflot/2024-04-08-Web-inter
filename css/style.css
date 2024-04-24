@@ -207,6 +207,21 @@ p#test{
     cursor: pointer;
 }
 
+#carre{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    margin: 20px auto;
+    transition: transform 1s;
+}
+
+.gauche{
+    transform: translateX( calc( -1 * (50vw - 100px) ) );
+}
+
+.droite{
+    transform: translateX( calc( 50vw - 100px ) );
+}
 
 /* déclaration de structure */
 body{
