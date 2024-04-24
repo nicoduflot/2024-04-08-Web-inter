@@ -10,6 +10,25 @@
     <link rel="stylesheet" href="./css/bootstrap-icons.css" media="screen" />
     <script src="./js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="./css/bs-custom.css" media="screen" />
+    <script src="./js/utils.js"></script>
+    <script>
+        loaded(function(){
+            const custmNavLinks = sA('#custom-nav a');
+            custmNavLinks.forEach(element=>{
+                element.addEventListener('click', event=>{
+                    event.preventDefault();
+                    custmNavLinks.forEach(link=>{
+                        link.classList.remove('active');
+                    })
+                    element.classList.add('active');
+                    sA('[data-content]').forEach(content=>{
+                        content.classList.remove('nav-active');
+                    });
+                    s(`[data-content="${element.dataset.target}"]`).classList.add('nav-active');
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -348,7 +367,7 @@
             </article>
         </section>
         <section class="row">
-            <article>
+            <article class="p-2">
                 <ul class="nav nav-tabs" id="custom-nav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#" data-target="newsletter">Newsletter</a>

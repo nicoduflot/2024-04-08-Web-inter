@@ -152,5 +152,12 @@ loaded(function(){
     });
 
     /* mini exo : ajouter un bouton qui efface le plateau ET remet le premier joueur en pionRouge */
+    s('#resetp4').addEventListener('click', function(){
+        colorNow = 'pionRouge';
+        sA('#p4 td').forEach(td=>{
+            td.classList.remove('pionRouge');
+            td.classList.remove('pionJaune');
+        });
+    });
 
 });
