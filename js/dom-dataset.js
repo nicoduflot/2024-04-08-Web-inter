@@ -66,12 +66,25 @@ loaded(function(){
             break;
             case 'font':
             case 'magie':
-                /* mini exo :  faire la partie font et magie, si pas d'indication de poid, appliquer 'lighter' */
-                
+                /* mini exo :  faire la partie font et magie, si pas d'indication de poid, appliquer '900' */
+                const font = element.dataset.weight || '900';
+                element.addEventListener('mouseover', function(){
+                    this.style.setProperty('font-weight', font);
+                });
+                element.addEventListener('mouseleave', function(){
+                    this.style.removeProperty('font-weight');
+                });
             break;
             case 'after':
             default:
                 /* code after ou par défaut */
+                const style = element.dataset.style || 'italic';
+                element.addEventListener('mouseover', function(){
+                    this.style.setProperty('font-style', style);
+                });
+                element.addEventListener('mouseleave', function(){
+                    this.style.removeProperty('font-style');
+                });
         }
     });
 });
