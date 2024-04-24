@@ -223,6 +223,15 @@ p#test{
     transform: translateX( calc( 50vw - 100px ) );
 }
 
+#coord{
+    border-collapse: collapse;
+}
+
+#coord td{
+    border: 1px solid darkmagenta;
+    text-align: center;
+}
+
 /* déclaration de structure */
 body{
     margin: 0;

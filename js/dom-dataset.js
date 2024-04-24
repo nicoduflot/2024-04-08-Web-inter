@@ -87,4 +87,33 @@ loaded(function(){
                 });
         }
     });
+
+    /* 
+    interaction avec le tableaur : le pointeur 
+    
+    1 récupérer toutes les td qui sont concernées par la fonctionnalité
+
+    2 abonner chaque td à deux écouteurs d'événement
+        - un pour l'entrée dans le périmètre de la td
+        - un pour la sortie du périmètre de la td
+
+    */
+
+    const tds = sA('#coord td[data-column][data-line]');
+    tds.forEach(element=>{
+        const column = element.dataset.column;
+        element.addEventListener('mouseenter', function(){
+            element.parentElement.style.background = 'rgba(255, 0, 0, 0.5)';
+            sA(`#coord td[data-column="${column}"]`).forEach(td=>{
+                td.style.background = 'rgba(255, 0, 0, 0.5)';
+            });
+        });
+        
+        element.addEventListener('mouseleave', function(){
+            element.parentElement.style.removeProperty('background');
+            sA(`#coord td[data-column="${column}"]`).forEach(td=>{
+                td.style.removeProperty('background');
+            });
+        });
+    });
 });
