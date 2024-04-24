@@ -44,3 +44,34 @@ switch(true){
         console.log(' 1 + 1 ça fait deux, banane');
 }
 
+/* au survol de chacun des paragraphe, selon les dataset, appliquer des changement de style */
+
+/* récupérer les paragraphes ayant au moins le dataset "data-module" */
+
+loaded(function(){
+    const pModule = q('p[data-module]');
+    /*console.log(allP);*/
+    pModule.forEach(element=>{
+        const module = element.dataset.module;
+        /*console.log(module);*/
+        switch(module){
+            case 'color':
+                const color = element.dataset.color || '#ff0000';
+                element.addEventListener('mouseover', function(){
+                    this.style.setProperty('color', color);
+                });
+                element.addEventListener('mouseleave', function(){
+                    this.style.removeProperty('color');
+                });
+            break;
+            case 'font':
+            case 'magie':
+                /* mini exo :  faire la partie font et magie, si pas d'indication de poid, appliquer 'lighter' */
+                
+            break;
+            case 'after':
+            default:
+                /* code after ou par défaut */
+        }
+    });
+});
