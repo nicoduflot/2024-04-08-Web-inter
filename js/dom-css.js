@@ -25,5 +25,8 @@ loaded(function(){
     });
 
     /* faire bouger le carre */
-    
+    s('#gauche').addEventListener('click', ()=>s('#carre').className = 'gauche');
+    s('#centre').addEventListener('click', ()=>s('#carre').className = '');
+    s('#droite').addEventListener('click', ()=>s('#carre').className = 'droite');
+
 });
