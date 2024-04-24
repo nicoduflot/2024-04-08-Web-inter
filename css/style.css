@@ -223,14 +223,33 @@ p#test{
     transform: translateX( calc( 50vw - 100px ) );
 }
 
-#coord{
+.table{
     border-collapse: collapse;
 }
 
-#coord td{
+.table td{
     border: 1px solid darkmagenta;
     text-align: center;
     cursor: pointer;
+}
+
+#p4 td{
+    padding: 1rem;
+    cursor: default;
+}
+
+#p4 th{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.pionRouge{
+    background-color: darkred;
+}
+
+.pionJaune{
+    background-color: darkgoldenrod;
 }
 
 /* déclaration de structure */

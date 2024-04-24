@@ -131,4 +131,26 @@ loaded(function(){
             });
         });
     });
+
+    /* créer un plateau interactif (sans le calcul de la victoire) d'un puissance 4 */
+
+    let colorNow = 'pionRouge';
+
+    sA('#p4 th').forEach(th=>{
+        let colonne = 0;
+        th.addEventListener('click', function(){
+            colonne = th.dataset.col;
+            for(let i = 6; i > 0; i = i - 1){
+                const cell = s(`#p4 td[data-col="${colonne}"][data-row="${i}"]`);
+                if(!cell.classList.contains('pionRouge') && !cell.classList.contains('pionJaune')){
+                    cell.classList.add(colorNow);
+                    colorNow = (colorNow === 'pionRouge')? 'pionJaune' : 'pionRouge';
+                    break;
+                }
+            }
+        });
+    });
+
+    /* mini exo : ajouter un bouton qui efface le plateau ET remet le premier joueur en pionRouge */
+
 });
