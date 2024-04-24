@@ -101,18 +101,33 @@ loaded(function(){
 
     const tds = sA('#coord td[data-column][data-line]');
     tds.forEach(element=>{
+
+        /* écouter l'évènement click sur la td actuelle */
+        element.addEventListener('click', function(){
+            element.style.background = '#ff0000';
+            if(!element.dataset.checked || element.dataset.checked === 'false'){
+                element.setAttribute('data-checked', 'true');
+            }else{
+                element.setAttribute('data-checked', 'false');
+            }
+        });
+
         const column = element.dataset.column;
         element.addEventListener('mouseenter', function(){
             element.parentElement.style.background = 'rgba(255, 0, 0, 0.5)';
             sA(`#coord td[data-column="${column}"]`).forEach(td=>{
-                td.style.background = 'rgba(255, 0, 0, 0.5)';
+                if(td.dataset.checked !== 'true'){
+                    td.style.background = 'rgba(255, 0, 0, 0.5)';
+                }
             });
         });
-        
+
         element.addEventListener('mouseleave', function(){
             element.parentElement.style.removeProperty('background');
             sA(`#coord td[data-column="${column}"]`).forEach(td=>{
-                td.style.removeProperty('background');
+                if(td.dataset.checked !== 'true'){
+                    td.style.removeProperty('background');
+                }
             });
         });
     });

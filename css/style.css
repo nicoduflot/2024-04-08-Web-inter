@@ -230,6 +230,7 @@ p#test{
 #coord td{
     border: 1px solid darkmagenta;
     text-align: center;
+    cursor: pointer;
 }
 
 /* déclaration de structure */
