@@ -53,5 +53,21 @@ window.addEventListener('DOMContentLoaded', function(){
 
     */
 
+    let cpt = 1;
+
+    const addSpan = document.getElementById('addSpan');
+    addSpan.addEventListener('click', function(){
+        const span = document.createElement('span');
+        span.classList.add('testSpan');
+        /* span.className = 'testSpan' */
+        const content = document.createTextNode(`n°${cpt}`);
+        cpt = cpt + 1;
+        span.addEventListener('click', function(){
+            this.remove();
+        });
+        span.append(content);
+        document.getElementById('pSpan').append(span);
+    });
+
 
 });
