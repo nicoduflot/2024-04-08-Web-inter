@@ -255,6 +255,28 @@ main article{
     margin: 0.5rem;
 }
 
+#nav-js > ul{
+    list-style-type: none;
+}
+
+#nav-js > ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+#nav-js li{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+#nav-js li a{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    display: block;
+}
+
 @media screen and (min-width: 576px){
     body > header > div,
     body > nav > div,
@@ -298,6 +320,13 @@ main article{
     body > nav ul li:not(body > nav ul li:last-child){
         border-bottom: unset;
         border-right: 1px solid var(--site-bg-color);
+    }
+
+    #nav-js > ul{
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1rem;
     }
 
     body > nav a, body > nav a:visited,

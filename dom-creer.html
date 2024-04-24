@@ -32,36 +32,38 @@
         </div>
     </nav>
     <main>
-        <nav>
-            <li><a href="./js-intro.html">Intro</a></li>
-            <li>DOM
-                <ul>
-                    <li><a href="./dom-intro.html">Document Object Model</a></li>
-                    <li><a href="./dom-creer.html">Créer dans le DOM</a></li>
-                    <li><a href="./dom-css.html">DOM & CSS</a></li>
-                    <li><a href="./dom-dataset.html">DOM : dataset</a></li>
-                </ul>
-            </li>
-            <li>
-                AJAX
-                <ul>
-                    <li><a href="./ajax-xhr.html">XHR</a></li>
-                    <li><a href="./ajax-promesses.html">Promesse</a></li>
-                    <li><a href="./ajax-fetch.html">Fetch</a></li>
-                    <li><a href="./ajax-fetch-json.html">JSON</a></li>
-                </ul>
-            </li>
-            <li>
-                POO
-                <ul>
-                    <li><a href="./poo-intro.html">POO : bases</a></li>
-                    <li><a href="./poo-collections.html">Collections</a></li>
-                    <li><a href="./poo-modules.html">Modules</a></li>
-                    <li><a href="./poo-classes.html">Classes</a></li>
-                    <li><a href="./poo-factory.html">Factory</a></li>
-                    <li><a href="./poo-iterator-generator.html">Iterator & generator</a></li>
-                </ul>
-            </li>
+        <nav id="nav-js">
+            <ul>
+                <li><a href="./js-intro.html">Intro</a></li>
+                <li>DOM
+                    <ul>
+                        <li><a href="./dom-intro.html">Document Object Model</a></li>
+                        <li><a href="./dom-creer.html">Créer dans le DOM</a></li>
+                        <li><a href="./dom-css.html">DOM & CSS</a></li>
+                        <li><a href="./dom-dataset.html">DOM : dataset</a></li>
+                    </ul>
+                </li>
+                <li>
+                    AJAX
+                    <ul>
+                        <li><a href="./ajax-xhr.html">XHR</a></li>
+                        <li><a href="./ajax-promesses.html">Promesse</a></li>
+                        <li><a href="./ajax-fetch.html">Fetch</a></li>
+                        <li><a href="./ajax-fetch-json.html">JSON</a></li>
+                    </ul>
+                </li>
+                <li>
+                    POO
+                    <ul>
+                        <li><a href="./poo-intro.html">POO : bases</a></li>
+                        <li><a href="./poo-collections.html">Collections</a></li>
+                        <li><a href="./poo-modules.html">Modules</a></li>
+                        <li><a href="./poo-classes.html">Classes</a></li>
+                        <li><a href="./poo-factory.html">Factory</a></li>
+                        <li><a href="./poo-iterator-generator.html">Iterator & generator</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
         <section>
             <article>
@@ -156,6 +158,30 @@
                 <p id="pSpan">
                     
                 </p>
+                <footer>
+                    <a href="./media.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>Créer une todo list</h2>
+                </header>
+                <p>
+                    On écrit un élément de la liste dans le champ de saisie, on clique sur "ajouter". Un élément li est ajouté, si on clique dessus il est supprimé. 
+                    Quand on ajoute un élément, on vérifie que le champ n'est pas vide, une fois ajouté le champs est vidé.
+                    On peut aussi ajouter sans cliquer, en appuyant sur la touche "Entrée"
+                </p>
+                <p>
+                    <input type="text" id="listItem" />
+                    <button id="addItem">
+                        Ajouter
+                    </button>
+                </p>
+                <div id="list">
+                    <ul id="toDoList">
+                        
+                    </ul>
+                </div>
                 <footer>
                     <a href="./media.html"><button>Lire +</button></a>
                 </footer>

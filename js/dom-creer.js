@@ -1,3 +1,32 @@
+function addItemList(listItem){
+    if(listItem !== ''){
+        /*
+        on peut transformer une collection d'éléments HTML en un tableau, pour pouvoir utiliser la méthode .include() des tableaux qui permet de vérifier s'il y a déja au moins une occurence d'un élément
+        */
+        const tabLi = Array.from(document.querySelectorAll('#toDoList li'));
+        /*
+        tabLi est un tableau contenant des éléments de liste <li></li>, on le parcours avec .map(), dans la callback du .map(), on récupère le contenu texte de la li et on la retourne.
+        À la sortie du .map(), on regarde si la chaîne de caratère de l'élément parcouru est semblable à l'élément que l'on veut ajouter dans la liste.
+        Dès qu'il y a correspondance (doublon) on sort prématurément de la fonction, sinon, on continue et l'élément est ajouté à la liste
+        */
+        if(
+            ( tabLi.map(function(li){
+                return li.textContent.toLowerCase();
+            }).includes(listItem.toLowerCase()) )
+        ){
+            return false;
+        }
+
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(listItem));
+        li.addEventListener('click', function(){
+            this.remove();
+        });
+        document.getElementById('toDoList').appendChild(li);
+        return true;
+    }
+}
+
 window.addEventListener('DOMContentLoaded', function(){
     const tabEventTarget = document.querySelector('table.tabEventTarget');
     tabEventTarget.addEventListener('click', function(event){
@@ -69,5 +98,20 @@ window.addEventListener('DOMContentLoaded', function(){
         document.getElementById('pSpan').append(span);
     });
 
+    const inputItem = document.getElementById('listItem');
+    document.getElementById('addItem').addEventListener('click', function(){
+        /* appel fonction d'ajoût dans la liste */
+        addItemList(inputItem.value);
+        inputItem.value = '';
+        inputItem.focus();
+    });
+    
+    inputItem.addEventListener('keyup', function(event){
+        if(event.key === 'Enter'){
+            addItemList(inputItem.value);
+            inputItem.value = '';
+            inputItem.focus();
+        }
+    });
 
 });
