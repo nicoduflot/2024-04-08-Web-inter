@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Formation pour la POEI Développeur web et web mobile" />
+    <title>DAWAN - Webmaster Intermédiaire - Introduction </title>
+    <link rel="stylesheet" href="./css/style.css" media="screen" />
+    <script src="./js/dom-css.js"></script>
+</head>
+<body>
+    <header id="top">
+        <div>
+            <h1>DAWAN - Webmaster Intermédiaire - Introduction</h1>            
+        </div>
+    </header>
+    <nav>
+        <div>
+            <ul>
+                <li><a href="./index.html" target="_self" title="Lien vers l'accueil">Accueil</a></li>
+                <li><a href="./media.html" target="_self" title="lien vers Media">Media</a></li>
+                <li><a href="./exo-cv-form.html" target="_self" title="lien vers exo cv">Mon CV</a></li>
+                <li><a href="./formulaire.html" target="_self" title="lien vers Contact">Contact</a></li>
+                <li><a href="./grille.html" target="_self" title="lien vers Grille CSS">Grille CSS</a></li>
+                <li><a href="./bootstrap.html" target="_self" title="lien vers Bootstrap">Bootstrap</a></li>
+                <li><a href="./animation.html" target="_self" title="lien vers Animations">Animations</a></li>
+                <li><a href="./sass.html" target="_self" title="lien vers Sass">Sass</a></li>
+                <li><a href="./trucs.html" target="_self" title="lien vers trucs CSS">Trucs CSS</a></li>
+                <li><a href="./sass.html" target="_self" title="lien vers Sass">Sass</a></li>
+                <li><a href="./js-intro.html" target="_self" title="lien vers Js intro">JS intro</a></li>
+            </ul>            
+        </div>
+    </nav>
+    <main>
+        <nav id="nav-js">
+            <ul>
+                <li><a href="./js-intro.html">Intro</a></li>
+                <li>DOM
+                    <ul>
+                        <li><a href="./dom-intro.html">Document Object Model</a></li>
+                        <li><a href="./dom-creer.html">Créer dans le DOM</a></li>
+                        <li><a href="./dom-css.html">DOM & CSS</a></li>
+                        <li><a href="./dom-dataset.html">DOM : dataset</a></li>
+                    </ul>
+                </li>
+                <li>
+                    AJAX
+                    <ul>
+                        <li><a href="./ajax-xhr.html">XHR</a></li>
+                        <li><a href="./ajax-promesses.html">Promesse</a></li>
+                        <li><a href="./ajax-fetch.html">Fetch</a></li>
+                        <li><a href="./ajax-fetch-json.html">JSON</a></li>
+                    </ul>
+                </li>
+                <li>
+                    POO
+                    <ul>
+                        <li><a href="./poo-intro.html">POO : bases</a></li>
+                        <li><a href="./poo-collections.html">Collections</a></li>
+                        <li><a href="./poo-modules.html">Modules</a></li>
+                        <li><a href="./poo-classes.html">Classes</a></li>
+                        <li><a href="./poo-factory.html">Factory</a></li>
+                        <li><a href="./poo-iterator-generator.html">Iterator & generator</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <article>
+                <header>
+                    <h2>Agir sur le CSS</h2>
+                </header>
+                <p>
+                    <button id="btn">
+                        modifier l'apperence du paragraphe
+                    </button>
+                </p>
+                <p id="cible">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime sequi officiis quas, sapiente perspiciatis eum accusantium? Aliquam error expedita at reiciendis commodi tenetur dolorum eveniet eos dolorem, non nostrum minima?
+                </p>
+
+                <footer>
+                    <a href="./media.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>.createElement()</h2>
+                </header>
+                <p>
+                    Coordonnées du clic ci-dessous : <span id="coordonnees"></span>
+                </p>
+                <table id="conteneur">
+
+                </table>
+                <footer>
+                    <a href="./media.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>.preventDefault()</h2>
+                </header>
+                <p>
+                    Au clic, afficher le contenu du lien (le texte qu'on clique) dans la console en évitant le comportement par défaut du lien cliqué.
+                </p>
+                <p>
+                    <a href="#" id="toto" class="testPreventLink">toto</a><br />
+                    <a href="#" id="titi" class="testPreventLink">titi</a><br />
+                    <a href="#" id="tata" class="testPreventLink">tata</a>
+                </p>
+                <footer>
+                    <a href="./media.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>TD : Ajouter un span dans le paragraphe</h2>
+                </header>
+                <p>
+                    <button id="addSpan">
+                        Ajouter un span dans le paragraphe
+                    </button>
+                </p>
+                <p id="pSpan">
+                    
+                </p>
+                <footer>
+                    <a href="./media.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>Créer une todo list</h2>
+                </header>
+                <p>
+                    On écrit un élément de la liste dans le champ de saisie, on clique sur "ajouter". Un élément li est ajouté, si on clique dessus il est supprimé. 
+                    Quand on ajoute un élément, on vérifie que le champ n'est pas vide, une fois ajouté le champs est vidé.
+                    On peut aussi ajouter sans cliquer, en appuyant sur la touche "Entrée"
+                </p>
+                <p>
+                    <input type="text" id="listItem" />
+                    <button id="addItem">
+                        Ajouter
+                    </button>
+                </p>
+                <div id="list">
+                    <ul id="toDoList">
+                        
+                    </ul>
+                </div>
+                <footer>
+                    <a href="./media.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+        </section>
+        <aside>
+            <a href="#top"><i class="bi bi-arrow-up-circle-fill"></i></a>
+        </aside>
+    </main>
+    <footer>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="#" target="_self">lien 01</a></li>
+                    <li><a href="#" target="_self">lien 02</a></li>
+                    <li><a href="#" target="_self">lien 03</a></li>
+                    <li><a href="#" target="_self">lien 04</a></li>
+                    <li><a href="#" target="_self">lien 05</a></li>
+                    <li><a href="#" target="_self">lien 06</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul>
+                    <li><a href="#balise-texte">Les balises de contenu texte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
