@@ -246,7 +246,65 @@ loaded(function(){
             - payer avec la carte
         */
 
+        class Compte{
+            constructor(nom, prenom, solde){
+                this.nom = nom;
+                this.prenom = prenom;
+                this.solde = (parseFloat(solde)?parseFloat(solde) : 0);
+            }
 
+            retirerArgent(montant){
+                const montantRetirer = (parseFloat(montant))?parseFloat(montant): 0;
+                this.solde = this.solde - montantRetirer;
+                if(montantRetirer === 0){
+                    return `montant de ${montant} inconnu, aucun montant n'a été retiré du solde ${ (this.solde >= 0)? 'crediteur': 'débiteur' } : ${this.solde}€`;
+                }else{
+                    return `${montantRetirer} € retiré(s),\nsolde ${ (this.solde >= 0)? 'crediteur': 'débiteur' } : ${this.solde}€`;
+                }
+            }
+
+            ajouterArgent(montant){
+                const montantRetirer = (parseFloat(montant))?parseFloat(montant): 0;
+                this.solde = this.solde + montantRetirer;
+                if(montantRetirer === 0){
+                    return `montant de ${montant} inconnu, aucun montant n'a été ajouté au solde ${ (this.solde >= 0)? 'crediteur': 'débiteur' } : ${this.solde}€`;
+                }else{
+                    return `${montantRetirer} € ajouté(s), solde ${ (this.solde >= 0)? 'crediteur': 'débiteur' } : ${this.solde}€`;
+                }
+            }
+        }
+
+        class CompteCourant extends Compte{
+            constructor(nom, prenom, solde, codePin){
+                super(nom, prenom, solde);
+                this._codePin = codePin;
+            }
+
+            get getCodePin(){
+                return this._codePin;
+            }
+
+            /**
+             * 
+             * @param {number} montant 
+             * @param {number} codePin 
+             * @returns 
+             */
+            payerParCarte(montant, codePin){
+                if(this.getCodePin === codePin && parseFloat(montant)){
+                    return `Un paiement de ${montant} € a été effectué par carte.\n${this.retirerArgent(montant)}`;
+                }else{
+                    return `Une tentative de paiement par carte de ${montant} € a échoué`;
+                }
+            }
+        }
+
+        const monCompteCourant = new CompteCourant('Duflot', 'Nicolas', 'toto');
+        console.log(monCompteCourant);
+        console.log(monCompteCourant.ajouterArgent(2500));
+        console.log(monCompteCourant.payerParCarte(23));
+        console.log(monCompteCourant.solde);
+        console.log(monCompteCourant.retirerArgent(150));
 
         /*
         après l'exo
@@ -264,4 +322,4 @@ loaded(function(){
         
         */
 
-    })
+    });
