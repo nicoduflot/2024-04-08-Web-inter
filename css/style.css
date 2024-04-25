@@ -299,18 +299,17 @@ main article{
     margin: 0.5rem;
 }
 
-#nav-js > ul{
+#nav-js ul{
     list-style-type: none;
 }
 
-#nav-js > ul{
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 1rem;
+
+
+#nav-js > ul ul{
+    padding: 0;
 }
 
-#nav-js li{
+#nav-js li li{
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
@@ -345,6 +344,8 @@ main article{
         clear: both;
     }
 
+    
+
 
 }
 
@@ -375,9 +376,17 @@ main article{
 
     body > nav a, body > nav a:visited,
     body > footer a, body > nav a:visited{
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
-}
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+    }
+
+    #nav-js > ul{
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0.2rem;
+        padding: 0;
+    }
 }
 
 @media screen and (min-width: 992px){
