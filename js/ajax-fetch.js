@@ -5,7 +5,7 @@ function readableStreamToList(data){
         if((typeof data[element]) === 'object'){
             console.log(element);
             liste = `${liste}\n<li>${element}`;
-            liste = `${liste}\n${jsonToTable(data[element])}`;
+            liste = `${liste}\n${readableStreamToList(data[element])}`;
             liste = `${liste}\n</li>`;
         }else{
             /*console.log(element);
