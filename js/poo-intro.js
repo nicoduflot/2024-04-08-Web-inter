@@ -272,6 +272,18 @@ loaded(function(){
                     return `${montantRetirer} € ajouté(s), solde ${ (this.solde >= 0)? 'crediteur': 'débiteur' } : ${this.solde}€`;
                 }
             }
+
+            /**
+             * 
+             * @param {object} compteBeneficiaire 
+             * @param {number} montant 
+             * @returns 
+             */
+            virement(compteBeneficiaire, montant){
+                let message = `Virement : \n${this.retirerArgent(montant)}`;
+                message = message + `\n${compteBeneficiaire.ajouterArgent(montant)}`;
+                return message;
+            }
         }
 
         class CompteCourant extends Compte{
@@ -299,13 +311,6 @@ loaded(function(){
             }
         }
 
-        const monCompteCourant = new CompteCourant('Duflot', 'Nicolas', 'toto');
-        console.log(monCompteCourant);
-        console.log(monCompteCourant.ajouterArgent(2500));
-        console.log(monCompteCourant.payerParCarte(23));
-        console.log(monCompteCourant.solde);
-        console.log(monCompteCourant.retirerArgent(150));
-
         /*
         après l'exo
         Ajouter ensemble
@@ -321,5 +326,36 @@ loaded(function(){
             - créditer les intérêts sur le solde
         
         */
+
+        class CompteInterets extends Compte{
+            constructor(nom, prenom, solde, tauxInteret){
+                super(nom, prenom, solde);
+                this.tauxInteret = tauxInteret;
+            }
+
+            /* pour créditer les intérêts, il faut calculer les intérets */
+            calculerInterets(){
+                return ((this.tauxInteret - 1) * this.solde) ;                
+            }
+
+            crediterInterets(){
+                return this.ajouterArgent(this.calculerInterets());
+            }
+        }
+
+
+        const monCompteCourant = new CompteCourant('Duflot', 'Nicolas', 'toto');
+        console.log(monCompteCourant);
+        console.log(monCompteCourant.ajouterArgent(2500));
+        console.log(monCompteCourant.payerParCarte(23));
+        console.log(monCompteCourant.solde);
+        console.log(monCompteCourant.retirerArgent(150));
+
+        const compteMagasinDeJouet = new CompteCourant('Joué Clueb', '', 50000000, 1234);
+
+        console.log(compteMagasinDeJouet);
+        console.log(monCompteCourant.solde);
+        console.log(monCompteCourant.virement(compteMagasinDeJouet, 20));
+        console.log(compteMagasinDeJouet);
 
     });
