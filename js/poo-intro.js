@@ -222,4 +222,46 @@ loaded(function(){
         amublanceBobo.toggleSirene();
         console.log(amublanceBobo.demarrer());
 
+        /* mini exo sur les classes */
+
+        /* créer une classe mère 
+        Compte 
+            Attributs :
+            - nom 
+            - prenom
+            - solde
+            Méthodes
+            - retirer de l'argent
+            - ajouter de l'argent
+        
+        une classe fille CompteCourant
+            Attributs :
+            - nom 
+            - prenom
+            - solde
+            - _codePin
+            Méthodes
+            - retirer de l'argent
+            - ajouter de l'argent
+            - payer avec la carte
+        */
+
+
+
+        /*
+        après l'exo
+        Ajouter ensemble
+        une classe fille CompteInteret
+            Attributs :
+            - nom 
+            - prenom
+            - solde
+            - tauxInteret
+        Methodes
+            - retirer de l'argent
+            - ajouter de l'argent
+            - créditer les intérêts sur le solde
+        
+        */
+
     })
