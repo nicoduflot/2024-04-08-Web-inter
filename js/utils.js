@@ -51,3 +51,23 @@ function randomize(min = 0, max = 0){
         }
     }
 }
+
+function setCookie(name, value = '', days = -1, path = '/'){
+    const maxAge = days*3600;
+    const chaineCookie = `${name}=${value}; max-age=${maxAge}; path=${path}; Samesite=Strict; secure`;
+    document.cookie = chaineCookie;
+    return true;
+}
+
+function getCookie(name = ''){
+    const tabCookie = document.cookie.split('; ');
+    for(cookie of tabCookie){
+        const indexEqual = cookie.indexOf('=');
+        const cookieName = cookie.splice(0, indexEqual);
+        const cookieValue = cookie.splice(indexEqual+1);
+        if(name === cookieName){
+            return cookieValue
+        }
+    }
+    return false;
+}

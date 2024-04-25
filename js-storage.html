@@ -7,7 +7,7 @@
     <title>DAWAN - Webmaster Intermédiaire - Introduction </title>
     <link rel="stylesheet" href="./css/style.css" media="screen" />
     <script src="./js/utils.js"></script>
-    <script type="module" src="./js/poo-collections.js"></script>
+    <script type="module" src="./js/storage.js"></script>
 </head>
 <body>
     <header id="top">
@@ -69,12 +69,75 @@
         <section>
             <article>
                 <header>
-                    <h2>POO : Modules</h2>
+                    <h2>JS : Stockage des données dans le navigateur</h2>
                 </header>
                 <hr />
+                <h3>Session storage</h3>
                 <p>
-                    Les collections sont des structures - objets - proches des tableaux
-                    mais qu'on manipule comme des objets
+                    <label>Username</label> 
+                    <input type="text" id="sessionUser" />
+                </p>
+                <p>
+                    Username enregistré : 
+                    <span id="usernameLogged"></span>
+                </p>
+                <p>
+                    <button id="sessionUserNameLog">
+                        Enregistrer UserName en session
+                    </button>
+                </p>
+                <p>
+                    <button id="sessionDeleteUsername">
+                        Supprimer username et son contenu
+                    </button>
+                </p>
+                <p>
+                    <button id="sessionClearSession">
+                        Vider la session de son contenu
+                    </button>
+                </p>
+                <h3>Local storage</h3>
+                <p>
+                    <label>Username</label> 
+                    <input type="text" id="localUser" />
+                </p>
+                <p>
+                    Username enregistré : 
+                    <span id="usernameLocalLogged"></span>
+                </p>
+                <p>
+                    <button id="localUserNameLog">
+                        Enregistrer UserName en local
+                    </button>
+                </p>
+                <p>
+                    <button id="localDeleteUsername">
+                        Supprimer username et son contenu
+                    </button>
+                </p>
+                <p>
+                    <button id="localClearLocal">
+                        Vider la session de son contenu
+                    </button>
+                </p>
+                <h3>Les cookies</h3>
+                <p>
+                    <label>User name</label> 
+                    <input type="text" id="cookieUsername" />
+                </p>
+                <p>
+                    Username enregistré : 
+                    <span id="CookieLogUsername"></span>
+                </p>
+                <p>
+                    <button id="logCookie">
+                        Enregistrer username en cookie
+                    </button>
+                </p>
+                <p>
+                    <button id="unlogCookie">
+                        Supprimer username en cookie
+                    </button>
                 </p>
                 <footer>
                     <a href="./media.html"><button>Lire +</button></a>
