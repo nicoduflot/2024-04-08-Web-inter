@@ -1,10 +1,14 @@
+classe Arme
+    - nom
+    - dg
+
 classe Aventurier
 	Attributs décidés par le joueur
 		- prenom
 		- nom
+	Attributs déterminés ou calculés par la classe
 		- bagarre (corps à corps)
 		- cerveau (tir et ou  magie)
-	Attributs calculés par la classe
 		- _PV de base
 		- PV actuels
 		- _PA de base
@@ -14,9 +18,9 @@ classe Aventurier
 	Méthodes communes à tous les personnages
 		2d6PlusSkill(skill)
 		_modifierP(type, P)
+		attaquer(personnageEnnemi: objet personnage)
 		seSoigner() (dépends des PA)
 		seReposer() récupère tous les PA
-		attaquer(personnageEnnemi: objet personnage)
 		coupSpecial(personnageEnnemi: objet personnage) dépend des PA
 		
 		
