@@ -129,20 +129,32 @@ loaded(function(){
 
     /* 
     mini exo generator
-    créer un géenerator de lancer de dés polyèdres
+    créer un generator de lancer de dés polyèdres
 
     let cpt = 1;
     for(let score of xDy(3, 6)){
         console.log(`lancé ${cpt} : ${score}`);
         cpt = cpt + 1;
     }
+
+    xDy(nbD, nbFaces)
+        on retourne nbD fois le résultat de randomize(1, nbFaces)
     */
 
     /* on a randomize */
 
     function* xDy(nbD, nbFaces){
-
+        for(let i = 0; i < nbD; i = i + 1){
+            yield randomize(1, nbFaces);
+        }
     }
+
+    let cpt = 1;
+    for(let score of xDy(3, 20)){
+        console.log(`lancé ${cpt} : ${score}`);
+        cpt = cpt + 1;
+    }
+
 
 
 });
