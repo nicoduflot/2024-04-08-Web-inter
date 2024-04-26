@@ -3,6 +3,7 @@ import Arme from "./Classes/Arme.js";
 import Aventurier from "./Classes/Aventurier.js";
 import Guerrier from "./Classes/Guerrier.js";
 import Voleur from "./Classes/Voleur.js";
+import Mage from "./Classes/Mage.js";
 
 /* début de l'aventure */
 loaded(function(){
@@ -51,4 +52,7 @@ loaded(function(){
     console.log(monVoleur.attaquer(monGuerrier));
     console.log(monVoleur.coupSpecial(monGuerrier));
 
+    const monMage = new Mage('Rincevent', 'Loser');
+    console.log(monMage);
+    console.log(monMage.coupSpecial(monAventurier));
 });

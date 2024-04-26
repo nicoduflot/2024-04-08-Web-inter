@@ -51,3 +51,9 @@ export function randomize(min = 0, max = 0){
         }
     }
 }
+
+export function* xDy(nbD, nbFaces){
+    for(let i = 0; i < nbD; i = i + 1){
+        yield randomize(1, nbFaces);
+    }
+}
