@@ -78,4 +78,71 @@ loaded(function(){
     }
     */
 
+    function returnEven(min, max){
+        let result = [];
+        for(let i = min; i <= max; i = i +1){
+            if( 0 === (i % 2 )){
+                result.push(i);
+            }
+        }
+        return result;
+    }
+
+    console.log(returnEven(3, 25));
+
+    /* 
+    yoda code : 
+        comparer le non variable au variable au lieu de comparer le variable au non variable 
+    */
+
+    /*
+    // en java
+    String a = 'Chaîne';
+    a.equal('Chaîne'); // retourne true
+    
+    String b = null;
+    b.equal('Chaîne'); // retourne une erreur de type NullPointerException
+
+    // en yoda code pour éviter l'erreur et avoir le résultat du test
+    'Chaîne'.equal(b); // retourne false
+
+    */
+
+    /*
+    avec un generator
+    */
+
+    function* valeursPaires(min, max){
+        for(let i = min; i <= max; i = i +1){
+            if( 0 === (i % 2 )){
+                yield i;
+            }
+        }
+    }
+
+    /*console.log(valeursPaires(3, 25));*/
+    /* la commande précédente n'affiche rien, car elle attends qu'on récolter une a une les données qu'elle renvoie */
+
+    for(let value of valeursPaires(3, 25)){
+        console.log(value);
+    }
+
+    /* 
+    mini exo generator
+    créer un géenerator de lancer de dés polyèdres
+
+    let cpt = 1;
+    for(let score of xDy(3, 6)){
+        console.log(`lancé ${cpt} : ${score}`);
+        cpt = cpt + 1;
+    }
+    */
+
+    /* on a randomize */
+
+    function* xDy(nbD, nbFaces){
+
+    }
+
+
 });
