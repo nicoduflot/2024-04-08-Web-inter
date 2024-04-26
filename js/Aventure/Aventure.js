@@ -2,6 +2,7 @@ import loaded, {s, sA, randomize} from "./Modules/Utils.js";
 import Arme from "./Classes/Arme.js";
 import Aventurier from "./Classes/Aventurier.js";
 import Guerrier from "./Classes/Guerrier.js";
+import Voleur from "./Classes/Voleur.js";
 
 /* début de l'aventure */
 loaded(function(){
@@ -34,5 +35,20 @@ loaded(function(){
     console.log(monAventurier.PVActuels);
     console.log(monGuerrier.attaquer(monAventurier));
     console.log(monAventurier.PVActuels);
+
+    console.log(monGuerrier.soigner(monAventurier));
+
+    console.log(monGuerrier.PVActuels);
+    console.log(monGuerrier.soigner());
+    console.log(monGuerrier.PVActuels);
+
+    console.log(monGuerrier.coupSpecial(monAventurier));
+    console.log(monAventurier.coupSpecial(monGuerrier));
+
+    const monVoleur = new Voleur('Arsene', 'Lupin');
+
+    console.log(monVoleur);
+    console.log(monVoleur.attaquer(monGuerrier));
+    console.log(monVoleur.coupSpecial(monGuerrier));
 
 });

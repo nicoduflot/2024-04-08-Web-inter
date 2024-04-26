@@ -49,19 +49,27 @@ export default class Aventurier{
      * @param {string} type - type de point (PV, PVA, PA, PAA)
      * @param {*} P - nombre de point a modifier (positif ou négatif)
      */
-    _modifierP(type, P){
+    modifierP(type, P){
         switch(type){
             case 'PV':
                 this.setPV = this.getPV + P;
             break;
             case 'PVA':
-                this.PVActuels = this.PVActuels + P;
+                if(this.PVActuels + P <= this.getPv){
+                    this.PVActuels = this.PVActuels + P;
+                }else{
+                    this.PVActuels = this.getPv;
+                }
             break;
             case 'PA':
                 this.setPa = this.getPa + P;
             break;
             case 'PAA':
-                this.PAActuels = this.PAActuels + P;
+                if(this.PAActuels + P <= this.getPa){
+                    this.PAActuels = this.PAActuels + P;
+                }else{
+                    this.PAActuels = this.getPa;
+                }
             break;
         }
         return true;
@@ -69,6 +77,7 @@ export default class Aventurier{
 
     attaquer(ennemi){
         const dg = this.arme.calculerDegat();
+        /*console.log(this.arme.dg);*/
         const score = this.deuxD6PlusSkill(this.bagarre);
         /*
         si score <= 6 => attaque ratée
@@ -81,23 +90,55 @@ export default class Aventurier{
         let message = '';
         switch(true){
             case (score < 7):
-                message = `Attaque ratée (score : ${score}), 0 dégâts occasionnés`;
+                message = `Attaque ratée (score : ${score}), 0 dégâts occasionnés\n`;
             break;
             case (score >= 7 && score < 10):
                 dgTotaux = Math.ceil(dg / 2);
-                message = `Attaque réussie de peu (score : ${score}), ${dgTotaux} dégâts occasionnés`;
+                message = `Attaque réussie de peu (score : ${score}), ${dgTotaux} dégâts occasionnés\n`;
             break;
             case (score >= 10 && score <= 11):
                 dgTotaux = dg
-                message = `Attaque réussie (score : ${score}), ${dgTotaux} dégâts occasionnés`;
+                message = `Attaque réussie (score : ${score}), ${dgTotaux} dégâts occasionnés\n`;
             break;
             case (score > 11):
                 const bonus = randomize(1, 6);
                 dgTotaux = dg + bonus;
-                message = `Attaque critique (score : ${score}), ${dg} + ${bonus} = ${dgTotaux} dégâts occasionnés`;
+                message = `Attaque critique (score : ${score}), ${dg} + ${bonus} = ${dgTotaux} dégâts occasionnés\n`;
             break;
         }
-        ennemi._modifierP('PVA', -dgTotaux);
+        ennemi.modifierP('PVA', -dgTotaux);
+        return message;
+    }
+
+    soigner(personnage = this){
+        let message = `${this.prenom} ${this.nom} tente de soigner ${personnage.prenom}\n`;
+        if(this.PAActuels - 1 >= 0){
+            const soin = this.deuxD6PlusSkill(this.cerveau);
+            personnage.modifierP('PVA', soin);
+            if(personnage.PVActuels + soin <= personnage.getPV){
+                message = message + `Le soin procure ${soin} PV\n santé : ${personnage.PVActuels} / ${personnage.getPv} PV`;
+            } else {
+                message = message  +`Le soin procure ${soin} PV\nSanté maximale atteinte : ${personnage.PVActuels} / ${personnage.getPv} PV`;
+            }
+            this.modifierP('PAA', -1);
+        }else{
+            message = message + 'pas assez de points d\'aventure pour appliquer des soins';
+        }
+
+        return message;
+    }
+
+    coupSpecial(personnage){
+        let message = `${this.prenom} ${this.nom} tente un coup spécial sur ${personnage.prenom}\n`;
+        if(this.PAActuels - 1 >= 0){
+            const dDgBase = this.arme.dg;
+            this.arme.dg = this.arme.dg + 1;
+            message = message + this.attaquer(personnage);
+            this.arme.dg = dDgBase;
+            this.modifierP('PAA', -1);
+        }else{
+            message = message + 'pas assez de points d\'aventure pour faire un coup spécial';
+        }
         return message;
     }
 }

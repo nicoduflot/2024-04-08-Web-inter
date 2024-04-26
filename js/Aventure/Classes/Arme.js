@@ -6,10 +6,10 @@ export default class Arme{
         this.dg = dg;
     }
 
-    calculerDegat(){
+    calculerDegat(bonus = 0){
         let dgTotaux = 0;
         for(let i = 0; i < this.dg; i = i + 1){
-            dgTotaux = dgTotaux + randomize(1, 6);
+            dgTotaux = dgTotaux + randomize(1, 6) + bonus;
         }
         return dgTotaux;
     }
