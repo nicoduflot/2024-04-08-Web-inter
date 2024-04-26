@@ -63,10 +63,10 @@ function getCookie(name = ''){
     const tabCookie = document.cookie.split('; ');
     for(cookie of tabCookie){
         const indexEqual = cookie.indexOf('=');
-        const cookieName = cookie.splice(0, indexEqual);
-        const cookieValue = cookie.splice(indexEqual+1);
+        const cookieName = cookie.slice(0, indexEqual);
+        const cookieValue = cookie.slice(indexEqual+1);
         if(name === cookieName){
-            return cookieValue
+            return cookieValue;
         }
     }
     return false;

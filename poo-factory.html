@@ -7,7 +7,7 @@
     <title>DAWAN - Webmaster Intermédiaire - Introduction </title>
     <link rel="stylesheet" href="./css/style.css" media="screen" />
     <script src="./js/utils.js"></script>
-    <script type="module" src="./js/storage.js"></script>
+    <script type="module" src="./js/poo-factory.js"></script>
 </head>
 <body>
     <header id="top">
@@ -73,75 +73,14 @@
         <section>
             <article>
                 <header>
-                    <h2>JS : Stockage des données dans le navigateur</h2>
+                    <h2>POO : les factory</h2>
                 </header>
                 <hr />
-                <h3>Session storage</h3>
                 <p>
-                    <label>Username</label> 
-                    <input type="text" id="sessionUser" />
+                    Usine de création d'objet, sans passer par une classe "normale" qui possède un constructeur
                 </p>
                 <p>
-                    Username enregistré : 
-                    <span id="usernameLogged"></span>
-                </p>
-                <p>
-                    <button id="sessionUserNameLog">
-                        Enregistrer UserName en session
-                    </button>
-                </p>
-                <p>
-                    <button id="sessionDeleteUsername">
-                        Supprimer username et son contenu
-                    </button>
-                </p>
-                <p>
-                    <button id="sessionClearSession">
-                        Vider la session de son contenu
-                    </button>
-                </p>
-                <h3>Local storage</h3>
-                <p>
-                    <label>Username</label> 
-                    <input type="text" id="localUser" />
-                </p>
-                <p>
-                    Username enregistré : 
-                    <span id="usernameLocalLogged"></span>
-                </p>
-                <p>
-                    <button id="localUserNameLog">
-                        Enregistrer UserName en local
-                    </button>
-                </p>
-                <p>
-                    <button id="localDeleteUsername">
-                        Supprimer username et son contenu
-                    </button>
-                </p>
-                <p>
-                    <button id="localClearLocal">
-                        Vider la session de son contenu
-                    </button>
-                </p>
-                <h3>Les cookies</h3>
-                <p>
-                    <label>User name</label> 
-                    <input type="text" id="cookieUsername" />
-                </p>
-                <p>
-                    Username enregistré : 
-                    <span id="cookieLogUsername"></span>
-                </p>
-                <p>
-                    <button id="logCookie">
-                        Enregistrer username en cookie
-                    </button>
-                </p>
-                <p>
-                    <button id="unlogCookie">
-                        Supprimer username en cookie
-                    </button>
+                    Tout se passe dans le code
                 </p>
                 <footer>
                     <a href="./media.html"><button>Lire +</button></a>
