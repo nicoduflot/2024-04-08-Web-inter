@@ -1,0 +1,36 @@
+classe Aventurier
+	Attributs décidés par le joueur
+		- prenom
+		- nom
+		- bagarre (corps à corps)
+		- cerveau (tir et ou  magie)
+	Attributs calculés par la classe
+		- _PV de base
+		- PV actuels
+		- _PA de base
+		- PA actuels
+		- arme objet new Arme(nom, dg)
+	
+	Méthodes communes à tous les personnages
+		2d6PlusSkill(skill)
+		_modifierP(type, P)
+		seSoigner() (dépends des PA)
+		seReposer() récupère tous les PA
+		attaquer(personnageEnnemi: objet personnage)
+		coupSpecial(personnageEnnemi: objet personnage) dépend des PA
+		
+		
+
+classe Guerrier étendue d'aventurier (PLUS DE PV)
+	plus de PV
+	coupSpecial appel _doubleAttaque(){
+		on lance deux fois attaquer
+	}
+
+classe Voleur étendue d'aventurier (BONUS au skill cerveau)
+	bonus cerveau selon niveau
+	coupSpecial appel _attaqueDerriere => bonus au dégât de 1.5 fois le niveau d6 (arrondi vers le haut
+
+classe Mage étendue d'aventurier (PLUS DE PA)
+	bonus au PA selon le niveau
+	coupSpecial appel _bouleDeFeu dg 2+niveau d6
